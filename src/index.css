@@ -1,13 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .cat-btn {
+    @apply flex h-[65px] w-[300px] items-center justify-center rounded-full bg-white text-[15px] font-bold md:w-[325px];
+  }
+
+  .cat-btn-items {
+    @apply pl-1 pr-[10px] font-normal text-[#9E9E9E];
+  }
+
+  .cat-items {
+    @apply flex h-[260px] items-center justify-center rounded-xl bg-cover md:h-full;
+  }
+
+  .sort-btn {
+    @apply flex h-[55px] w-full items-center justify-between rounded-full border-[1px] border-[#D6D6D6] px-[30px] md:w-[238px];
+  }
+
+  .sort-popup {
+    @apply absolute top-[55px] z-20 flex w-full items-center justify-between rounded-[28px] border-[1px] border-[#D6D6D6] bg-white md:w-[238px];
+  }
+
+  .red-btn {
+    @apply flex h-[55px] w-[265px] items-center justify-center rounded-[42px] bg-[#FF5454] text-[16px] uppercase text-white md:h-[65px] md:w-[225px] mt-[30px];
+  }
+
+  .text-h1 {
+    @apply text-[26px] font-bold md:text-[38px] mt-[60px];
+  }
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

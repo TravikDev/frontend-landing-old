@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="74" height="74" viewBox="0 0 74 74">
+  <g id="Right_arrow" data-name="Right arrow" transform="translate(-1748 -443)">
+    <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(1750 445)" fill="#fff" stroke="rgba(208,166,54,0)" stroke-linejoin="round" stroke-width="2">
+      <circle cx="35" cy="35" r="35" stroke="none"/>
+      <circle cx="35" cy="35" r="36" fill="none"/>
+    </g>
+    <path id="Контур_5" data-name="Контур 5" d="M2.259,20l-2.27-2.333L7.449,10-.011,2.333,2.259,0l9.73,10Z" transform="translate(1779.012 470)" fill="#ff5454" fill-rule="evenodd"/>
+  </g>
+</svg>
