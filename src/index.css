@@ -28,7 +28,7 @@
   }
 
   .text-h1 {
-    @apply text-[26px] font-bold md:text-[38px] text-center mt-[40px] ;
+    @apply text-[26px] font-bold md:text-[38px] text-center mt-[40px];
   }
 
   .text-input {
@@ -48,9 +48,7 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
