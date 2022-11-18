@@ -42,6 +42,10 @@
   .footer-link {
     @apply text-[#FF5454] underline
   }
+
+  .text-error-input {
+    @apply text-[#FF5454] text-[12px] leading-[15px]
+  }
 }
 
 body {

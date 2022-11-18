@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
 // import Slider from "./Slider/Slider"
 // import bg1 from "../img/bg1.png"
 // import countries from "../data/countries.json";
@@ -50,20 +50,15 @@ function Main() {
     togglePopupType(!isOpenPopupType);
   };
 
-  const filteredStones = () => {
-    let stoneFiltered = [];
-    Object.assign(stoneFiltered, stones);
-    if (selectedCountry !== "")
-      stoneFiltered = stoneFiltered.filter(
-        (stone) => stone.country === selectedCountry
-      );
-    if (selectedType !== "")
-      stoneFiltered = stoneFiltered.filter(
-        (stone) => stone.type === selectedType
-      );
-    if (isFullListLatest === false) stoneFiltered.length = 8;
-    return stoneFiltered;
-  };
+  const filteredStones = useMemo( () => {
+    const filtered = stones.filter((stone) => {
+      if(selectedCountry !== "" && stone.country !== selectedCountry) { return false }
+      if (selectedType !== "" && stone.type !== selectedType) { return false }
+      return true;
+      })
+      
+      return isFullListLatest === false ? filtered.slice(0,8) : filtered;
+  }, [stones, selectedCountry, selectedType, isFullListLatest])
 
   useEffect(() => {
     document.body.addEventListener("click", (event) => {
@@ -202,7 +197,7 @@ function Main() {
         </div>
       </section>
       <section className="mt-[30px] flex w-full flex-col justify-center gap-[20px] md:max-w-[1200px] md:flex-row md:flex-wrap md:gap-[30px]">
-        <LatestItems stones={filteredStones()} />
+        <LatestItems stones={filteredStones} />
       </section>
       <button
         className={`red-btn mb-[0px] ${

@@ -126,10 +126,10 @@ function Slider() {
 
           <section className="mx-auto mt-[267px] flex flex-col text-center text-white md:mt-[373px] md:w-2/4 md:text-left xl:w-[1170px]">
             <span className="text-[16px] md:text-[26px]">
-              {sliderImages[0].firstTitle}
+              {activeSlider === 1 ? sliderImages[0].firstTitle : sliderImages[1].firstTitle}
             </span>
             <h1 className="text-[34px] font-bold md:text-[60px]">
-              {firstSliderString[0]} <br /> {firstSliderString[1]}
+              { activeSlider === 1 ? (firstSliderString[0]) : (secondSliderString[0])} <br /> { activeSlider === 1 ? (firstSliderString[1]) : (secondSliderString[1])}
             </h1>
             <div className="mx-[10px] mt-[15px] flex gap-[10px] md:mt-8 md:gap-6">
               <div className="flex h-[55px] w-[265px] items-center justify-center rounded-[42px] bg-[#FF5454] text-[16px] uppercase md:h-[65px] md:w-[225px]">
