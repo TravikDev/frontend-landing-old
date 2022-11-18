@@ -1,10 +1,10 @@
 import React from "react";
 // import stones from "../../data/stones.json"
 
-function LatestItems({ isFullListLatest, stones }) {
+function LatestItems({ stones }) {
   return stones.length !== 0 ? (
     stones.map((stone) => (
-      <div className="z-10 mt-[20px]" key={stone.id}>
+      <div className="z-10 mt-[30px]" key={stone.id}>
         <div className="relative">
           <img
             className="w-full md:w-[270px]"
@@ -20,7 +20,7 @@ function LatestItems({ isFullListLatest, stones }) {
           )}
         </div>
 
-        <div className="flex flex-col items-start">
+        <div className="flex flex-col items-start mt-[15px] md:mt-[20px]">
           <span className="text-[16px]">{stone.title}</span>
           <div className="flex">
             <span className="mr-[10px] text-[20px] font-bold">

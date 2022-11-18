@@ -12,7 +12,7 @@
   }
 
   .cat-items {
-    @apply flex h-[260px] items-center justify-center rounded-xl bg-cover md:h-full;
+    @apply flex h-[260px] items-center justify-center rounded-3xl bg-cover md:h-full;
   }
 
   .sort-btn {
@@ -24,15 +24,29 @@
   }
 
   .red-btn {
-    @apply flex h-[55px] w-[265px] items-center justify-center rounded-[42px] bg-[#FF5454] text-[16px] uppercase text-white md:h-[65px] md:w-[225px] mt-[30px];
+    @apply flex h-[55px] w-full items-center justify-center rounded-[42px] bg-[#FF5454] text-[16px] uppercase text-white md:h-[65px] md:w-[225px] mt-[30px] mb-[40px];
   }
 
   .text-h1 {
-    @apply text-[26px] font-bold md:text-[38px] mt-[60px];
+    @apply text-[26px] font-bold md:text-[38px] text-center mt-[40px] ;
+  }
+
+  .text-input {
+    @apply w-full h-[55px] rounded-[33px] border-[1px] border-[#9E9E9E] placeholder:py-[18px] px-[25px]
+  }
+
+  .label-input {
+    @apply text-[18px] font-bold text-left mt-[20px] mb-[10px]
+  }
+
+  .footer-link {
+    @apply text-[#FF5454] underline
   }
 }
 
 body {
+  max-width: 100vw;
+  overflow-x: hidden;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",

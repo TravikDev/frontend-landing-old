@@ -1,4 +1,5 @@
 import './App.css';
+import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Main from "./components/Main";
 import Slider from "./components/Slider/Slider";
@@ -11,7 +12,7 @@ function App() {
       <div className="px-[10px]">
       <Main />
       </div>
-      
+      <Footer />
     </div>
   );
 }

@@ -9,7 +9,7 @@ function Categories() {
       top-rated sellers and manufacturers
     </h2>
 
-  <article className="grid h-[755px] w-full gap-[5px] md:grid-cols-4 md:grid-rows-3 md:gap-[10px]">
+  <article className="flex flex-col md:grid md:h-[755px] w-full gap-[5px] md:grid-cols-4 md:grid-rows-3 md:gap-[10px]">
     <section className="cat-items bg-cat1 md:col-span-2 md:row-span-3">
       <span className="cat-btn">
         Cultured Stone

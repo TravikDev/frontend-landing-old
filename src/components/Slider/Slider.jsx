@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 function Slider() {
 
-    const [sliderImages, setsliderImages] = useState([
+    const [sliderImages] = useState([
         {
             id: 1,
             firstTitle: "The largest platform of",
@@ -31,7 +31,7 @@ if(activeSlider !== 1) toggleActiveSlider(active => active - 1)
     const rightArrow = activeSlider === sliderImages.length ? "opacity-70" : "opacity-100"
 
   return (
-    <div className={`flex h-[500px] w-full bg-auto bg-center bg-no-repeat md:h-[960px] bg-bg${activeSlider}`}>
+    <div className={"flex h-[500px] w-full bg-auto bg-center bg-no-repeat md:h-[960px] " + (activeSlider === 1 ? "bg-bg1" : "bg-bg2")}>
       <div className="flex w-full">
 
         {/* START SLIDER ARROWS */}
