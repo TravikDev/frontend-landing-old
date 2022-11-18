@@ -4,7 +4,7 @@ import Categories from "./Categories/Categories";
 import ContactUs from "./Contact/ContactUs";
 import LatestItems from "./Latest/LatestItems";
 
-function Main({itemsRef, categoriesRef, contactUsRef}) {
+function Main({ itemsRef, categoriesRef, contactUsRef }) {
   const [countries] = useState([
     "United Arab Emirates",
     "Russia",
@@ -47,15 +47,19 @@ function Main({itemsRef, categoriesRef, contactUsRef}) {
     togglePopupType(!isOpenPopupType);
   };
 
-  const filteredStones = useMemo( () => {
+  const filteredStones = useMemo(() => {
     const filtered = stones.filter((stone) => {
-      if(selectedCountry !== "" && stone.country !== selectedCountry) { return false }
-      if (selectedType !== "" && stone.type !== selectedType) { return false }
+      if (selectedCountry !== "" && stone.country !== selectedCountry) {
+        return false;
+      }
+      if (selectedType !== "" && stone.type !== selectedType) {
+        return false;
+      }
       return true;
-      })
-      
-      return isFullListLatest === false ? filtered.slice(0,8) : filtered;
-  }, [stones, selectedCountry, selectedType, isFullListLatest])
+    });
+
+    return isFullListLatest === false ? filtered.slice(0, 8) : filtered;
+  }, [selectedCountry, selectedType, isFullListLatest]);
 
   useEffect(() => {
     document.body.addEventListener("click", (event) => {
@@ -74,7 +78,7 @@ function Main({itemsRef, categoriesRef, contactUsRef}) {
       <h2 className="text-center">
         Thousands of new products from quality exports around the world
       </h2>
-      <section className="mt-[20px] flex w-full flex-col justify-center gap-[5px] md:flex-row">
+      <section className="mt-[20px] flex w-full flex-col justify-center gap-[5px] md:flex-row md:gap-[15px]">
         {/* Country selection */}
         <div className="relative md:mx-0" ref={countrySortRef}>
           <button className="sort-btn" onClick={handleClickCountrySort}>
@@ -120,7 +124,7 @@ function Main({itemsRef, categoriesRef, contactUsRef}) {
                 {countries.map((country) => (
                   <li
                     className={
-                      "w-full  pl-[30px] leading-[30px] cursor-pointer " +
+                      "w-full  cursor-pointer pl-[30px] leading-[30px] " +
                       (country === selectedCountry && "bg-[#FF5454] text-white")
                     }
                     key={country}
@@ -179,7 +183,7 @@ function Main({itemsRef, categoriesRef, contactUsRef}) {
                 {types.map((type) => (
                   <li
                     className={
-                      "w-full pl-[30px] leading-[30px] cursor-pointer " +
+                      "w-full cursor-pointer pl-[30px] leading-[30px] " +
                       (type === selectedType && "bg-[#FF5454] text-white")
                     }
                     key={type}

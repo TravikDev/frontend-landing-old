@@ -1,4 +1,5 @@
 import React from "react";
+import { MobileMenu } from "./ListMenu";
 
 function MobileMenuOverlay({
   itemsRefScroll, 
@@ -6,8 +7,7 @@ function MobileMenuOverlay({
   contactUsRefScroll,
   isMobileMenuOpen,
   mobileMenuRef,
-  toggleMobileMenu,
-  MobileMenu,
+  toggleMobileMenu
 }) {
   return (
     isMobileMenuOpen && (
@@ -36,15 +36,15 @@ function MobileMenuOverlay({
         </button>
         <nav>
           <ul className="mt-[111px] flex list-none flex-col items-center">
-            <MobileMenu 
+            <MobileMenu
               itemsRefScroll={itemsRefScroll}
               categoriesRef={categoriesRefScroll}
               contactUsRefScroll={contactUsRefScroll}
             />
 
             <section className="mt-[40px] flex flex-col text-center leading-8 text-[#ff5454]">
-              <span>Login</span>
-              <span>Register</span>
+              <span className="cursor-pointer">Login</span>
+              <span className="cursor-pointer">Register</span>
             </section>
           </ul>
         </nav>

@@ -18,6 +18,7 @@ function Categories({categoriesRef}) {
               src={process.env.PUBLIC_URL + "/img/arrows/arrowRight.svg"}
               width="9"
               height="14"
+              alt="right Arrow"
             />
           </span>
         </section>
@@ -29,6 +30,7 @@ function Categories({categoriesRef}) {
               src={process.env.PUBLIC_URL + "/img/arrows/arrowRight.svg"}
               width="9"
               height="14"
+              alt="right Arrow"
             />
           </span>
         </section>
@@ -40,6 +42,7 @@ function Categories({categoriesRef}) {
               src={process.env.PUBLIC_URL + "/img/arrows/arrowRight.svg"}
               width="9"
               height="14"
+              alt="right Arrow"
             />
           </span>
         </section>
@@ -51,6 +54,7 @@ function Categories({categoriesRef}) {
               src={process.env.PUBLIC_URL + "/img/arrows/arrowRight.svg"}
               width="9"
               height="14"
+              alt="right Arrow"
             />
           </span>
         </section>
@@ -62,6 +66,7 @@ function Categories({categoriesRef}) {
               src={process.env.PUBLIC_URL + "/img/arrows/arrowRight.svg"}
               width="9"
               height="14"
+              alt="right Arrow"
             />
           </span>
         </section>
@@ -73,6 +78,7 @@ function Categories({categoriesRef}) {
               src={process.env.PUBLIC_URL + "/img/arrows/arrowRight.svg"}
               width="9"
               height="14"
+              alt="right Arrow"
             />
           </span>
         </section>

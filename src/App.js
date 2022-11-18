@@ -17,7 +17,6 @@ function App() {
 
 
   return (
-    <>
       <div className="flex flex-col justify-center">
         <Header 
         itemsRefScroll={itemsRefScroll}
@@ -34,7 +33,6 @@ function App() {
         </div>
         <Footer />
       </div>
-    </>
   );
 }
 

@@ -30,7 +30,7 @@ export const MobileMenu = ({itemsRefScroll, categoriesRefScroll, contactUsRefScr
   return menuItems.map((item, i) => (
     <li
       onClick={refArray[i]}
-      className="text-[16px] font-bold uppercase leading-8 text-black"
+      className="cursor-pointer text-[16px] font-bold uppercase leading-8 text-black"
       key={item.id}
     >
       {item.title}

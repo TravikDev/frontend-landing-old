@@ -21,6 +21,7 @@ function Footer() {
                 src={process.env.PUBLIC_URL + "/img/social/Facebook.png"}
                 width="40px"
                 height="40px"
+                alt="facebook"
               />
             </button>
             <button>
@@ -28,6 +29,7 @@ function Footer() {
                 src={process.env.PUBLIC_URL + "/img/social/Twitter.png"}
                 width="40px"
                 height="40px"
+                alt="twitter"
               />
             </button>
             <button>
@@ -35,6 +37,7 @@ function Footer() {
                 src={process.env.PUBLIC_URL + "/img/social/Youtube.png"}
                 width="40px"
                 height="40px"
+                alt="youtube"
               />
             </button>
             <button>
@@ -42,6 +45,7 @@ function Footer() {
                 src={process.env.PUBLIC_URL + "/img/social/Instagram.png"}
                 width="40px"
                 height="40px"
+                alt="instagram"
               />
             </button>
           </section>
