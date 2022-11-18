@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="close_icon" data-name="close icon" d="M23.067,3.282l-7.8,7.791-7.8-7.791-2.2,2.2,7.791,7.8-7.791,7.8,2.2,2.2,7.8-7.791,7.8,7.791,2.2-2.2-7.791-7.8,7.791-7.8Z" transform="translate(14.873 16.857)"/>
+    </clipPath>
+  </defs>
+  <g id="Группа_масок_3" data-name="Группа масок 3" transform="translate(-20.146 -20.139)" clip-path="url(#clip-path)">
+    <path id="noun-close-1746030" d="M17.007,15.211,7.342,5.545,9.164,3.723l9.665,9.665L28.5,3.723l1.823,1.823-9.665,9.665,9.665,9.665L28.5,26.7,18.83,17.033,9.165,26.7,7.342,24.876Z" transform="translate(11.313 14.928)"/>
+  </g>
+</svg>
