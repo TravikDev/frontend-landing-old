@@ -21,7 +21,7 @@ export const ListMenu = () => {
 export const MobileMenu = () => {
   return menuItems.map((item) => (
     <li
-      className="text-black text-[16px] leading-8 font-bold uppercase"
+      className="text-[16px] font-bold uppercase leading-8 text-black"
       key={item.id}
     >
       {item.title}
