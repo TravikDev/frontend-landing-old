@@ -1,9 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { ListMenu, MobileMenu } from "./ListMenu";
 import MobileMenuOverlay from "./MobileMenuOverlay";
-// import logo from "img/logo.png"
 
-function Header() {
+function Header({itemsRefScroll, categoriesRefScroll, contactUsRefScroll}) {
   const [isMobileMenuOpen, toggleMobileMenu] = useState(false);
 
   const mobileMenuRef = useRef();
@@ -26,8 +25,10 @@ function Header() {
 
   return (
     <div className="flex justify-center">
-      {/* <div className="fixed top-0 h-full w-full bg-black z-20" /> */}
       <MobileMenuOverlay
+        itemsRefScroll={itemsRefScroll}
+        categoriesRef={categoriesRefScroll}
+        contactUsRefScroll={contactUsRefScroll}
         isMobileMenuOpen={isMobileMenuOpen}
         mobileMenuRef={mobileMenuRef}
         toggleMobileMenu={toggleMobileMenu}
@@ -56,7 +57,13 @@ function Header() {
         </section>
 
         <section className="hidden md:block">
-          <ListMenu />
+          <ListMenu
+          itemsRefScroll={itemsRefScroll}
+          categoriesRef={categoriesRefScroll}
+          contactUsRefScroll={contactUsRefScroll}
+          />
+
+
         </section>
 
         <button

@@ -1,6 +1,9 @@
 import React from "react";
 
 function MobileMenuOverlay({
+  itemsRefScroll, 
+  categoriesRefScroll, 
+  contactUsRefScroll,
   isMobileMenuOpen,
   mobileMenuRef,
   toggleMobileMenu,
@@ -33,7 +36,11 @@ function MobileMenuOverlay({
         </button>
         <nav>
           <ul className="mt-[111px] flex list-none flex-col items-center">
-            <MobileMenu />
+            <MobileMenu 
+              itemsRefScroll={itemsRefScroll}
+              categoriesRef={categoriesRefScroll}
+              contactUsRefScroll={contactUsRefScroll}
+            />
 
             <section className="mt-[40px] flex flex-col text-center leading-8 text-[#ff5454]">
               <span>Login</span>

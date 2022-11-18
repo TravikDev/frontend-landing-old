@@ -1,13 +1,10 @@
 import React, { useState, useRef, useEffect, useMemo } from "react";
-// import Slider from "./Slider/Slider"
-// import bg1 from "../img/bg1.png"
-// import countries from "../data/countries.json";
 import stones from "../../data/stones.json";
 import Categories from "./Categories/Categories";
 import ContactUs from "./Contact/ContactUs";
 import LatestItems from "./Latest/LatestItems";
 
-function Main() {
+function Main({itemsRef, categoriesRef, contactUsRef}) {
   const [countries] = useState([
     "United Arab Emirates",
     "Russia",
@@ -72,7 +69,7 @@ function Main() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center">
+    <div ref={itemsRef} className="flex flex-col items-center">
       <h1 className="text-h1">Discover Latest Items</h1>
       <h2 className="text-center">
         Thousands of new products from quality exports around the world
@@ -123,7 +120,7 @@ function Main() {
                 {countries.map((country) => (
                   <li
                     className={
-                      "w-full  pl-[30px] leading-[30px] " +
+                      "w-full  pl-[30px] leading-[30px] cursor-pointer " +
                       (country === selectedCountry && "bg-[#FF5454] text-white")
                     }
                     key={country}
@@ -182,7 +179,7 @@ function Main() {
                 {types.map((type) => (
                   <li
                     className={
-                      "w-full pl-[30px] leading-[30px] " +
+                      "w-full pl-[30px] leading-[30px] cursor-pointer " +
                       (type === selectedType && "bg-[#FF5454] text-white")
                     }
                     key={type}
@@ -208,9 +205,9 @@ function Main() {
         Load more
       </button>
 
-      <Categories />
+      <Categories categoriesRef={categoriesRef} />
 
-      <ContactUs />
+      <ContactUs contactUsRef={contactUsRef} />
     </div>
   );
 }

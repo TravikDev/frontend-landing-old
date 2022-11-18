@@ -9,14 +9,14 @@ const schema = Yup.object().shape({
 	message: Yup.string().required('This field is required!'),
 });
 
-function ContactUs() {
+function ContactUs({contactUsRef}) {
 
   const handleSubmit = (values) => {
     console.log(values)
   }
 
   return (
-    <article className="w-full md:max-w-[1170px]">
+    <article ref={contactUsRef} className="w-full md:max-w-[1170px]">
       <h1 className="text-h1">Contact us</h1>
       <h2 className="text-center">
         Contact us anytime, we are ready to help you!

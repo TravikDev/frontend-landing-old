@@ -1,9 +1,9 @@
 import React from "react";
 
-function Categories() {
+function Categories({categoriesRef}) {
   return (
     <>
-      <h1 className="text-h1">Our Categories</h1>
+      <h1 ref={categoriesRef} className="text-h1">Our Categories</h1>
       <h2 className="mb-[30px] text-[16px]">
         Explore high-quality products from our top-rated sellers and
         manufacturers
