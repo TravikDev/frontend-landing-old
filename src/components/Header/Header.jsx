@@ -36,24 +36,22 @@ function Header({ itemsRefScroll, categoriesRefScroll, contactUsRefScroll }) {
       />
       <article
         className="
-            absolute top-[10px] z-10 mx-[10px]
-            flex h-[60px] w-[95%]
-            items-center 
-            justify-between rounded-[92px]
-            bg-black bg-opacity-[65%] text-[1rem]
-            font-light text-white sm:w-11/12
-            md:top-[40px] md:h-[70px] xl:w-[1170px]"
+            absolute top-[10px] z-10 mx-[10px] flex
+            h-[60px] w-[95%] items-center
+            justify-between 
+            rounded-[92px] bg-black
+            bg-opacity-[65%] text-[1rem] font-light
+            text-white sm:w-11/12 md:top-[40px]
+            md:mx-0 md:h-[70px] xl:w-[1170px]"
       >
-        <section className="ml-[50px] flex">
+        <section className="ml-[50px] flex gap-[10px]">
           <img
             src={process.env.PUBLIC_URL + "/img/logo.png"}
             alt="logo"
             width="44"
             height="33"
           />
-          <span className="my-[4px] ml-[10px] text-[21px] font-bold">
-            Logotype
-          </span>
+          <span className="text-[21px] font-bold">Logotype</span>
         </section>
 
         <section className="hidden md:block">

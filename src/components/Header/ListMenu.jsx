@@ -9,13 +9,11 @@ export const ListMenu = ({
   const refArray = [itemsRefScroll, categoriesRefScroll, contactUsRefScroll];
 
   return (
-    <ul className="flex list-none">
+    <ul className="flex list-none gap-[40px]">
       {menuItems.map((item, i) => (
         <li
           onClick={refArray[i]}
-          className={`${
-            item.id !== menuItems.length ? "mr-[40px]" : null
-          } cursor-pointer`}
+          className="cursor-pointer"
           key={item.id}
         >
           {item.title}
