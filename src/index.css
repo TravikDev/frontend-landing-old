@@ -24,31 +24,31 @@
   }
 
   .red-btn {
-    @apply flex h-[55px] w-full items-center justify-center rounded-[42px] bg-[#FF5454] text-[16px] uppercase text-white md:h-[65px] md:w-[225px] mt-[30px] mb-[40px];
+    @apply mt-[30px] mb-[40px] flex h-[55px] w-full items-center justify-center rounded-[42px] bg-[#FF5454] text-[16px] uppercase text-white md:h-[65px] md:w-[225px];
   }
 
   .text-h1 {
-    @apply text-[26px] font-bold md:text-[38px] text-center mt-[40px];
+    @apply mt-[40px] text-center text-[26px] font-bold md:text-[38px];
   }
 
   .text-input {
-    @apply w-full h-[55px] rounded-[33px] border-[1px] border-[#9E9E9E] placeholder:py-[18px] px-[25px]
+    @apply h-[55px] w-full rounded-[33px] border-[1px] border-[#9E9E9E] px-[25px] placeholder:py-[18px];
   }
 
   .label-input {
-    @apply text-[18px] font-bold text-left mt-[20px] mb-[10px]
+    @apply mt-[20px] mb-[10px] text-left text-[18px] font-bold;
   }
 
   .footer-link {
-    @apply text-[#FF5454] underline
+    @apply text-[#FF5454] underline;
   }
 
   .text-error-input {
-    @apply text-[#FF5454] text-[12px] leading-[15px]
+    @apply text-[12px] leading-[15px] text-[#FF5454];
   }
 
   .msg-error-input {
-    @apply h-[180px] w-full rounded-[33px] border-[1px] border-[#9E9E9E] py-[18px] px-[25px] md:h-[180px]
+    @apply h-[180px] w-full rounded-[33px] border-[1px] border-[#9E9E9E] py-[18px] px-[25px] md:h-[180px];
   }
 }
 
@@ -56,7 +56,7 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

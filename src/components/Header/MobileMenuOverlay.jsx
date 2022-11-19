@@ -2,12 +2,12 @@ import React from "react";
 import { MobileMenu } from "./ListMenu";
 
 function MobileMenuOverlay({
-  itemsRefScroll, 
-  categoriesRefScroll, 
+  itemsRefScroll,
+  categoriesRefScroll,
   contactUsRefScroll,
   isMobileMenuOpen,
   mobileMenuRef,
-  toggleMobileMenu
+  toggleMobileMenu,
 }) {
   return (
     isMobileMenuOpen && (

@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { ListMenu, MobileMenu } from "./ListMenu";
 import MobileMenuOverlay from "./MobileMenuOverlay";
 
-function Header({itemsRefScroll, categoriesRefScroll, contactUsRefScroll}) {
+function Header({ itemsRefScroll, categoriesRefScroll, contactUsRefScroll }) {
   const [isMobileMenuOpen, toggleMobileMenu] = useState(false);
 
   const mobileMenuRef = useRef();
@@ -58,12 +58,10 @@ function Header({itemsRefScroll, categoriesRefScroll, contactUsRefScroll}) {
 
         <section className="hidden md:block">
           <ListMenu
-          itemsRefScroll={itemsRefScroll}
-          categoriesRef={categoriesRefScroll}
-          contactUsRefScroll={contactUsRefScroll}
+            itemsRefScroll={itemsRefScroll}
+            categoriesRef={categoriesRefScroll}
+            contactUsRefScroll={contactUsRefScroll}
           />
-
-
         </section>
 
         <button

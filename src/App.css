@@ -3,7 +3,7 @@
   display: inline-block;
   border-radius: 50%;
   box-sizing: border-box;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .play-btn span {
   display: block;
@@ -11,6 +11,6 @@
   height: 0;
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
-  border-left: 11.5px solid #EB3434;
+  border-left: 11.5px solid #eb3434;
   margin: auto;
 }
