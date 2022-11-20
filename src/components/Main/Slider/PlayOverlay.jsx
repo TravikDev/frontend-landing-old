@@ -6,7 +6,7 @@ function PlayOverlay({ onClose = (f) => f }) {
     <>
       <div
         onClick={() => onClose(false)}
-        className="fixed z-20 h-full w-full bg-black opacity-30"
+        className="fixed z-20 h-[120%] w-full bg-black opacity-30"
       />
 
       <div className="fixed z-30 my-[172px] mx-[5px] h-auto md:h-[617px] min-w-[350px] bg-white p-[15px] md:mx-auto md:w-[70%] md:max-w-[1310px] md:p-[30px]">
