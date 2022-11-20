@@ -1,4 +1,5 @@
 import React from "react";
+import SocialList from "./SocialList";
 
 function Footer() {
   return (
@@ -15,40 +16,7 @@ function Footer() {
         </section>
 
         <section className="gap-[20px]">
-          <section className="flex justify-center gap-[15px]">
-            <button>
-              <img
-                src={process.env.PUBLIC_URL + "/img/social/Facebook.png"}
-                width="40px"
-                height="40px"
-                alt="facebook"
-              />
-            </button>
-            <button>
-              <img
-                src={process.env.PUBLIC_URL + "/img/social/Twitter.png"}
-                width="40px"
-                height="40px"
-                alt="twitter"
-              />
-            </button>
-            <button>
-              <img
-                src={process.env.PUBLIC_URL + "/img/social/Youtube.png"}
-                width="40px"
-                height="40px"
-                alt="youtube"
-              />
-            </button>
-            <button>
-              <img
-                src={process.env.PUBLIC_URL + "/img/social/Instagram.png"}
-                width="40px"
-                height="40px"
-                alt="instagram"
-              />
-            </button>
-          </section>
+          <SocialList />
         </section>
       </section>
     </article>
