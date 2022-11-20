@@ -1,15 +1,15 @@
 import React from "react";
+import Titles from "../../UI/Titles";
 
-function Categories({ categoriesRef }) {
+function Categories({ catsRef }) {
   return (
     <article className="pt-[40px] md:pt-[60px]">
-      <h1 ref={categoriesRef} className="text-h1">
-        Our Categories
-      </h1>
-      <h2 className="text-center">
-        Explore high-quality products from our top-rated sellers and
-        manufacturers
-      </h2>
+      <Titles
+        refs={catsRef}
+        titleH1="Our Categories"
+        titleH2="Explore high-quality products from our top-rated sellers and
+      manufacturers"
+      />
 
       <article className="mt-[30px] flex w-full flex-col gap-[5px] md:grid md:h-[755px] md:grid-cols-4 md:grid-rows-3 md:gap-[10px]">
         <section className="cat-items bg-cat1 md:col-span-2 md:row-span-3">

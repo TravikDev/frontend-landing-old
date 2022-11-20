@@ -3,10 +3,10 @@ import menuItems from "../../data/menu.json";
 
 export const ListMenu = ({
   itemsRefScroll,
-  categoriesRefScroll,
+  catsRefScroll,
   contactUsRefScroll,
 }) => {
-  const refArray = [itemsRefScroll, categoriesRefScroll, contactUsRefScroll];
+  const refArray = [itemsRefScroll, catsRefScroll, contactUsRefScroll];
 
   return (
     <ul className="flex list-none gap-[40px]">
@@ -21,10 +21,10 @@ export const ListMenu = ({
 
 export const MobileMenu = ({
   itemsRefScroll,
-  categoriesRefScroll,
+  catsRefScroll,
   contactUsRefScroll,
 }) => {
-  const refArray = [itemsRefScroll, categoriesRefScroll, contactUsRefScroll];
+  const refArray = [itemsRefScroll, catsRefScroll, contactUsRefScroll];
 
   return menuItems.map((item, i) => (
     <li

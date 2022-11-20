@@ -9,25 +9,25 @@ import Latest from "./components/Main/Latest/Latest";
 
 function App() {
   const itemsRef = useRef(null);
-  const categoriesRef = useRef(null);
+  const catsRef = useRef(null);
   const contactUsRef = useRef(null);
 
   const itemsRefScroll = () => itemsRef.current.scrollIntoView();
-  const categoriesRefScroll = () => categoriesRef.current.scrollIntoView();
+  const catsRefScroll = () => catsRef.current.scrollIntoView();
   const contactUsRefScroll = () => contactUsRef.current.scrollIntoView();
 
   return (
     <>
       <Header
         itemsRefScroll={itemsRefScroll}
-        categoriesRefScroll={categoriesRefScroll}
+        catsRefScroll={catsRefScroll}
         contactUsRefScroll={contactUsRefScroll}
       />
       <Slider />
       <div className="px-[10px]">
         <Latest itemsRef={itemsRef} />
 
-        <Categories categoriesRef={categoriesRef} />
+        <Categories catsRef={catsRef} />
 
         <ContactUs contactUsRef={contactUsRef} />
       </div>

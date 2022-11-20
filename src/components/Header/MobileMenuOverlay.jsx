@@ -3,7 +3,7 @@ import { MobileMenu } from "./ListMenu";
 
 function MobileMenuOverlay({
   itemsRefScroll,
-  categoriesRefScroll,
+  catsRefScroll,
   contactUsRefScroll,
   isMobileMenuOpen,
   mobileMenuRef,
@@ -30,7 +30,7 @@ function MobileMenuOverlay({
           <ul className="mt-[111px] flex list-none flex-col items-center">
             <MobileMenu
               itemsRefScroll={itemsRefScroll}
-              categoriesRef={categoriesRefScroll}
+              categoriesRef={catsRefScroll}
               contactUsRefScroll={contactUsRefScroll}
             />
 

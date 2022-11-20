@@ -1,6 +1,8 @@
 import React from "react";
+import RedButton from "../../UI/RedButton";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
+import Titles from "../../UI/Titles";
 
 const schema = Yup.object().shape({
   name: Yup.string().required("This field is required!"),
@@ -18,10 +20,11 @@ function ContactUs({ contactUsRef }) {
 
   return (
     <article className="py-[40px] md:py-[60px]">
-      <h1 className="text-h1">Contact us</h1>
-      <h2 className="text-center">
-        Contact us anytime, we are ready to help you!
-      </h2>
+      <Titles
+        refs={contactUsRef}
+        titleH1="Contact Us"
+        titleH2="Contact us anytime, we are ready to help you!"
+      />
       <article ref={contactUsRef} className="mx-auto w-full md:max-w-[1170px]">
         <Formik
           validationSchema={schema}
@@ -94,9 +97,7 @@ function ContactUs({ contactUsRef }) {
               />
               <div className="text-error-input mt-[5px]">{errors.message}</div>
               <section className="flex justify-center">
-                <button className="red-btn" type="submit">
-                  Send message
-                </button>
+                <RedButton isContactButton={true} title="SEND MESSAGE" />
               </section>
             </Form>
           )}
