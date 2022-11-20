@@ -1,26 +1,26 @@
 [
-    {
-        "id": 1,
-        "title": "facebook",
-        "img": "/img/social/Facebook.png",
-        "url": "https://facebook.com"
-    },
-    {
-        "id": 2,
-        "title": "twitter",
-        "img": "/img/social/Twitter.png",
-        "url": "https://twitter.com"
-    },
-    {
-        "id": 3,
-        "title": "youtube",
-        "img": "/img/social/Youtube.png",
-        "url": "https://youtube.com"
-    },
-    {
-        "id": 4,
-        "title": "instagram",
-        "img": "/img/social/Instagram.png",
-        "url": "https://instagram.com"
-    }
+  {
+    "id": 1,
+    "title": "facebook",
+    "img": "/img/social/Facebook.png",
+    "url": "https://facebook.com"
+  },
+  {
+    "id": 2,
+    "title": "twitter",
+    "img": "/img/social/Twitter.png",
+    "url": "https://twitter.com"
+  },
+  {
+    "id": 3,
+    "title": "youtube",
+    "img": "/img/social/Youtube.png",
+    "url": "https://youtube.com"
+  },
+  {
+    "id": 4,
+    "title": "instagram",
+    "img": "/img/social/Instagram.png",
+    "url": "https://instagram.com"
+  }
 ]
