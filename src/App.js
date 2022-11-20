@@ -17,7 +17,7 @@ function App() {
   const contactUsRefScroll = () => contactUsRef.current.scrollIntoView();
 
   return (
-    <div className="flex flex-col justify-center">
+    <>
       <Header
         itemsRefScroll={itemsRefScroll}
         categoriesRefScroll={categoriesRefScroll}
@@ -32,7 +32,7 @@ function App() {
         <ContactUs contactUsRef={contactUsRef} />
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
 
