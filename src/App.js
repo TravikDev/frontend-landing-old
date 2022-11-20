@@ -2,8 +2,10 @@ import { useRef } from "react";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import Main from "./components/Main/Main";
+import Categories from "./components/Main/Categories/Categories";
+import ContactUs from "./components/Main/Contact/ContactUs";
 import Slider from "./components/Main/Slider/Slider";
+import Latest from "./components/Main/Latest/Latest";
 
 function App() {
   const itemsRef = useRef(null);
@@ -23,11 +25,11 @@ function App() {
       />
       <Slider />
       <div className="px-[10px]">
-        <Main
-          itemsRef={itemsRef}
-          categoriesRef={categoriesRef}
-          contactUsRef={contactUsRef}
-        />
+        <Latest itemsRef={itemsRef} />
+
+        <Categories categoriesRef={categoriesRef} />
+
+        <ContactUs contactUsRef={contactUsRef} />
       </div>
       <Footer />
     </div>

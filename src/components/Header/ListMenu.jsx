@@ -11,11 +11,7 @@ export const ListMenu = ({
   return (
     <ul className="flex list-none gap-[40px]">
       {menuItems.map((item, i) => (
-        <li
-          onClick={refArray[i]}
-          className="cursor-pointer"
-          key={item.id}
-        >
+        <li onClick={refArray[i]} className="cursor-pointer" key={item.id}>
           {item.title}
         </li>
       ))}

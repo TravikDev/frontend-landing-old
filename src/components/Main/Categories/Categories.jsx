@@ -2,16 +2,16 @@ import React from "react";
 
 function Categories({ categoriesRef }) {
   return (
-    <>
+    <article className="pt-[40px] md:pt-[60px]">
       <h1 ref={categoriesRef} className="text-h1">
         Our Categories
       </h1>
-      <h2 className="mb-[30px] text-[16px]">
+      <h2 className="text-center">
         Explore high-quality products from our top-rated sellers and
         manufacturers
       </h2>
 
-      <article className="flex w-full flex-col gap-[5px] md:grid md:h-[755px] md:grid-cols-4 md:grid-rows-3 md:gap-[10px]">
+      <article className="mt-[30px] flex w-full flex-col gap-[5px] md:grid md:h-[755px] md:grid-cols-4 md:grid-rows-3 md:gap-[10px]">
         <section className="cat-items bg-cat1 md:col-span-2 md:row-span-3">
           <span className="cat-btn">
             Cultured Stone
@@ -85,7 +85,7 @@ function Categories({ categoriesRef }) {
           </span>
         </section>
       </article>
-    </>
+    </article>
   );
 }
 

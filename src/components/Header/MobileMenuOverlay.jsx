@@ -19,20 +19,12 @@ function MobileMenuOverlay({
           className="absolute top-[10px] right-[21px]"
           onClick={() => toggleMobileMenu(false)}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="h-[36px] w-[36px]"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
+          <img
+            src={process.env.PUBLIC_URL + "/img/mobile/mobileClose.svg"}
+            alt="close menu"
+            width="36"
+            height="36"
+          />
         </button>
         <nav>
           <ul className="mt-[111px] flex list-none flex-col items-center">

@@ -1,10 +1,8 @@
 import React, { useState, useRef, useEffect, useMemo } from "react";
-import stones from "../../data/stones.json";
-import Categories from "./Categories/Categories";
-import ContactUs from "./Contact/ContactUs";
-import LatestItems from "./Latest/LatestItems";
+import stones from "../../../data/stones.json";
+import LatestItems from "./LatestItems";
 
-function Main({ itemsRef, categoriesRef, contactUsRef }) {
+function Main({ itemsRef }) {
   const [countries] = useState([
     "United Arab Emirates",
     "Russia",
@@ -57,7 +55,6 @@ function Main({ itemsRef, categoriesRef, contactUsRef }) {
       }
       return true;
     });
-
     return isFullListLatest === false ? filtered.slice(0, 8) : filtered;
   }, [selectedCountry, selectedType, isFullListLatest]);
 
@@ -73,8 +70,10 @@ function Main({ itemsRef, categoriesRef, contactUsRef }) {
   }, []);
 
   return (
-    <div ref={itemsRef} className="flex flex-col items-center">
-      <h1 className="text-h1">Discover Latest Items</h1>
+    <div className="flex flex-col items-center pt-[40px] md:pt-[60px]">
+      <h1 ref={itemsRef} className="text-h1">
+        Discover Latest Items
+      </h1>
       <h2 className="text-center">
         Thousands of new products from quality exports around the world
       </h2>
@@ -86,41 +85,25 @@ function Main({ itemsRef, categoriesRef, contactUsRef }) {
               {selectedCountry || "Choose Country"}
             </span>
             {isOpenPopupCountry ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="h-6 w-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4.5 15.75l7.5-7.5 7.5 7.5"
-                />
-              </svg>
+              <img
+                src={process.env.PUBLIC_URL + "/img/arrows/arrowPopUp.svg"}
+                alt=""
+                width="16"
+                height="16"
+              />
             ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="h-6 w-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                />
-              </svg>
+              <img
+                src={process.env.PUBLIC_URL + "/img/arrows/arrowPopDown.svg"}
+                alt=""
+                width="16"
+                height="16"
+              />
             )}
           </button>
 
           {isOpenPopupCountry && (
-            <section className="sort-popup overflow-hidden">
-              <ul className="md w-full gap-[15px] pt-[10px] md:pt-[5px] md:pb-[5px]">
+            <section className="sort-popup">
+              <ul className="ul-popup">
                 {countries.map((country) => (
                   <li
                     className={
@@ -145,41 +128,25 @@ function Main({ itemsRef, categoriesRef, contactUsRef }) {
               {selectedType || "Choose Type"}
             </span>
             {isOpenPopupType ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="h-6 w-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4.5 15.75l7.5-7.5 7.5 7.5"
-                />
-              </svg>
+              <img
+                src={process.env.PUBLIC_URL + "/img/arrows/arrowPopUp.svg"}
+                alt=""
+                width="16"
+                height="16"
+              />
             ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="h-6 w-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                />
-              </svg>
+              <img
+                src={process.env.PUBLIC_URL + "/img/arrows/arrowPopDown.svg"}
+                alt=""
+                width="16"
+                height="16"
+              />
             )}
           </button>
 
           {isOpenPopupType && (
-            <section className="sort-popup overflow-hidden">
-              <ul className="md w-full gap-[15px] pt-[10px] md:pt-[5px] md:pb-[5px]">
+            <section className="sort-popup">
+              <ul className="ul-popup">
                 {types.map((type) => (
                   <li
                     className={
@@ -208,10 +175,6 @@ function Main({ itemsRef, categoriesRef, contactUsRef }) {
       >
         Load more
       </button>
-
-      <Categories categoriesRef={categoriesRef} />
-
-      <ContactUs contactUsRef={contactUsRef} />
     </div>
   );
 }

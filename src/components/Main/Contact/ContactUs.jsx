@@ -17,12 +17,12 @@ function ContactUs({ contactUsRef }) {
   };
 
   return (
-    <>
+    <article className="py-[40px] md:py-[60px]">
       <h1 className="text-h1">Contact us</h1>
       <h2 className="text-center">
         Contact us anytime, we are ready to help you!
       </h2>
-      <article ref={contactUsRef} className="w-full md:max-w-[1170px]">
+      <article ref={contactUsRef} className="mx-auto w-full md:max-w-[1170px]">
         <Formik
           validationSchema={schema}
           onSubmit={handleSubmit}
@@ -37,7 +37,7 @@ function ContactUs({ contactUsRef }) {
         >
           {({ handleChange, values, errors }) => (
             <Form className="flex flex-col">
-              <div className="flex flex-col justify-between md:flex-row md:gap-[30px]">
+              <section className="flex flex-col justify-between md:flex-row md:gap-[30px]">
                 <section className="flex w-full flex-col">
                   <label className="label-input">Full Name</label>
                   <input
@@ -68,7 +68,7 @@ function ContactUs({ contactUsRef }) {
                     {errors.email}
                   </div>
                 </section>
-              </div>
+              </section>
 
               <label className="label-input">Subject</label>
               <input
@@ -102,7 +102,7 @@ function ContactUs({ contactUsRef }) {
           )}
         </Formik>
       </article>
-    </>
+    </article>
   );
 }
 

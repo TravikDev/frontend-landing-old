@@ -24,6 +24,7 @@ function Header({ itemsRefScroll, categoriesRefScroll, contactUsRefScroll }) {
   };
 
   return (
+
     <div className="flex justify-center">
       <MobileMenuOverlay
         itemsRefScroll={itemsRefScroll}
@@ -34,17 +35,8 @@ function Header({ itemsRefScroll, categoriesRefScroll, contactUsRefScroll }) {
         toggleMobileMenu={toggleMobileMenu}
         MobileMenu={MobileMenu}
       />
-      <article
-        className="
-            absolute top-[10px] z-10 mx-[10px] flex
-            h-[60px] w-[95%] items-center
-            justify-between 
-            rounded-[92px] bg-black
-            bg-opacity-[65%] text-[1rem] font-light
-            text-white sm:w-11/12 md:top-[40px]
-            md:mx-0 md:h-[70px] xl:w-[1170px]"
-      >
-        <section className="ml-[50px] flex gap-[10px]">
+      <article className="header-menu">
+        <section className="ml-[30px] flex gap-[10px] md:ml-[50px]">
           <img
             src={process.env.PUBLIC_URL + "/img/logo.png"}
             alt="logo"
@@ -67,20 +59,12 @@ function Header({ itemsRefScroll, categoriesRefScroll, contactUsRefScroll }) {
           ref={mobileMenuIconRef}
           onClick={handleMobileMenuToggle}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1}
-            stroke="currentColor"
-            className="h-6 w-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-            />
-          </svg>
+          <img
+            src={process.env.PUBLIC_URL + "/img/mobile/mobileMenu.svg"}
+            alt=""
+            width="24"
+            height="24"
+          />
         </button>
 
         <section className="hidden md:flex md:flex-row md:items-center">

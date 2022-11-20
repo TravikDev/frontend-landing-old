@@ -34,7 +34,7 @@ function Slider() {
     activeSlider === sliderImages.length ? "opacity-70" : "opacity-100";
 
   return (
-    <div
+    <article
       className={
         "flex h-[500px] w-full justify-center bg-auto bg-center bg-no-repeat md:h-[960px] " +
         (activeSlider === 1 ? "bg-bg1" : "bg-bg2")
@@ -47,11 +47,11 @@ function Slider() {
         />
       )}
 
-      <div className="flex w-full">
+      <div className="flex w-full max-w-[1170px]">
         {/* START SLIDER ARROWS */}
 
         {/* FULL */}
-        <div className="absolute top-[445px] ml-[100px] hidden md:block">
+        <div className="absolute left-0 top-[445px] ml-[100px] hidden md:block">
           <button onClick={handleClickPreviousSlider}>
             <img
               className={leftArrow}
@@ -81,61 +81,49 @@ function Slider() {
           className="absolute top-[240px] ml-[10px] block md:hidden"
           onClick={handleClickPreviousSlider}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={3}
-            stroke="white"
-            className={`h-6 w-6 rotate-180 ${leftArrow}`}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M8.25 4.5l7.5 7.5-7.5 7.5"
-            />
-          </svg>
+          <img
+            className={leftArrow}
+            alt="leftArrow"
+            src={
+              process.env.PUBLIC_URL + "/img/slider/leftMobileArrowSlider.svg"
+            }
+            width="20px"
+            height="20px"
+          />
         </button>
 
         <button
           className="absolute right-0 top-[240px] mr-[10px] block md:hidden"
           onClick={handleClickNextSlider}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={3}
-            stroke="white"
-            className={`h-6 w-6 ${rightArrow}`}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M8.25 4.5l7.5 7.5-7.5 7.5"
-            />
-          </svg>
+          <img
+            className={rightArrow}
+            alt="rightArrow"
+            src={
+              process.env.PUBLIC_URL + "/img/slider/rightMobileArrowSlider.svg"
+            }
+            width="20px"
+            height="20px"
+          />
         </button>
 
         {/* NEXT */}
 
         {/* END SLIDER ARROWS */}
 
-        <section className="mx-auto mt-[267px] flex flex-col text-center text-white md:mt-[373px] md:w-2/4 md:text-left xl:w-[1170px]">
-          <span className="text-[16px] md:text-[26px]">
+        <section className="mt-[267px] flex w-full flex-col px-[10px] text-center text-white md:mt-[373px] xl:w-[1170px] 2xl:text-left">
+          <span className="slider-small-title">
             {activeSlider === 1
               ? sliderImages[0].firstTitle
               : sliderImages[1].firstTitle}
           </span>
-          <h1 className="text-[34px] font-bold md:text-[60px]">
-            {activeSlider === 1 ? firstSliderString[0] : secondSliderString[0]}{" "}
-            <br />{" "}
+          <h1 className="slider-big-title">
+            {activeSlider === 1 ? firstSliderString[0] : secondSliderString[0]}
+            <br />
             {activeSlider === 1 ? firstSliderString[1] : secondSliderString[1]}
           </h1>
-          <div className="mx-[10px] mt-[15px] flex gap-[10px] md:mt-8 md:gap-6">
-            <div className="flex h-[55px] w-[265px] cursor-pointer items-center justify-center rounded-[42px] bg-[#FF5454] text-[16px] uppercase md:h-[65px] md:w-[225px]">
-              Register Now
-            </div>
+          <div className="mt-[15px] flex justify-center gap-[10px] md:mt-8 md:gap-6 2xl:justify-start">
+            <div className="slider-register-btn">Register Now</div>
             <div className="flex items-center gap-[10px]">
               <button
                 className="play-btn h-[55px] w-[55px] bg-white pl-1 md:h-[40px] md:w-[40px]"
@@ -153,7 +141,7 @@ function Slider() {
           </div>
         </section>
       </div>
-    </div>
+    </article>
   );
 }
 

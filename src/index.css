@@ -3,6 +3,22 @@
 @tailwind utilities;
 
 @layer components {
+  .header-menu {
+    @apply absolute z-10 mt-[10px] flex h-[60px] w-[calc(100%-10px)] items-center justify-between  rounded-[92px] bg-black bg-opacity-[65%] text-[1rem] font-light text-white md:top-[40px] md:h-[70px] xl:w-[1170px];
+  }
+
+  .slider-small-title {
+    @apply text-[16px] leading-[19px] md:text-[26px] md:leading-[32px];
+  }
+
+  .slider-big-title {
+    @apply text-[34px] font-bold leading-[42px] md:text-[60px] md:leading-[97px];
+  }
+
+  .slider-register-btn {
+    @apply flex h-[55px] w-full cursor-pointer items-center justify-center rounded-[42px] bg-[#FF5454] text-[16px] uppercase md:h-[65px] md:w-[225px];
+  }
+
   .cat-btn {
     @apply flex h-[65px] w-[300px] items-center justify-center rounded-full bg-white text-[15px] font-bold md:w-[325px];
   }
@@ -19,16 +35,20 @@
     @apply flex h-[55px] w-full items-center justify-between rounded-full border-[1px] border-[#D6D6D6] px-[30px] md:w-[238px];
   }
 
+  .ul-popup {
+    @apply w-full gap-[15px] pb-[15px] pt-[17px] md:pt-[12px] md:pb-[12px];
+  }
+
   .sort-popup {
-    @apply absolute top-[55px] z-20 flex w-full items-center justify-between rounded-[28px] border-[1px] border-[#D6D6D6] bg-white md:w-[238px];
+    @apply absolute top-[55px] z-20 flex w-full items-center justify-between overflow-hidden rounded-[28px] border-[1px] border-[#D6D6D6] bg-white md:w-[238px];
   }
 
   .red-btn {
-    @apply mt-[30px] mb-[40px] flex h-[55px] w-full items-center justify-center rounded-[42px] bg-[#FF5454] text-[16px] uppercase text-white md:h-[65px] md:w-[225px];
+    @apply mt-[20px] flex h-[55px] w-full items-center justify-center rounded-[42px] bg-[#FF5454] text-[16px] uppercase text-white md:mt-[30px] md:h-[65px] md:w-[225px];
   }
 
   .text-h1 {
-    @apply mt-[40px] text-center text-[26px] font-bold md:text-[38px];
+    @apply text-center text-[26px] font-bold md:text-[38px];
   }
 
   .text-input {
@@ -36,7 +56,7 @@
   }
 
   .label-input {
-    @apply mt-[20px] mb-[10px] text-left text-[18px] font-bold;
+    @apply mt-[20px] mb-[10px] text-left text-[18px] font-bold md:mt-[30px];
   }
 
   .footer-link {

@@ -1,11 +1,10 @@
 import React from "react";
-// import stones from "../../data/stones.json"
 
 function LatestItems({ stones }) {
   return stones.length !== 0 ? (
     stones.map((stone) => (
-      <div className="z-10" key={stone.id}>
-        <div className="relative">
+      <article key={stone.id}>
+        <section className="relative">
           <img
             className="w-full md:max-w-[270px]"
             src={process.env.PUBLIC_URL + "/img/stones/img" + stone.id + ".jpg"}
@@ -20,12 +19,12 @@ function LatestItems({ stones }) {
               </span>
             </div>
           )}
-        </div>
+        </section>
 
-        <div className="mt-[15px] flex flex-col items-start md:mt-[20px]">
+        <section className="mt-[15px] flex flex-col items-start md:mt-[20px]">
           <span className="text-[16px]">{stone.title}</span>
-          <div className="flex">
-            <span className="mr-[10px] text-[20px] font-bold">
+          <div className="flex gap-[10px]">
+            <span className="text-[20px] font-bold">
               $
               {stone.discount
                 ? ((stone.price / 100) * (100 - stone.discount)).toFixed(2)
@@ -35,8 +34,8 @@ function LatestItems({ stones }) {
               {stone.discount > 0 && "$" + stone.price.toFixed(2)}
             </span>
           </div>
-        </div>
-      </div>
+        </section>
+      </article>
     ))
   ) : (
     <h1 className="mt-4 text-xl">Отсутствуют товары данной категории!</h1>
