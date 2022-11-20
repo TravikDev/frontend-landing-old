@@ -106,7 +106,7 @@ function Main({ itemsRef }) {
           Choose type
         </ItemsSelectors>
       </div>
-      <div className="mt-[30px] flex w-full flex-col justify-center gap-[20px] md:max-w-[1200px] md:flex-row md:flex-wrap md:gap-[30px]">
+      <div className="my-[20px] flex w-full flex-col justify-center gap-[20px] md:my-[30px] md:max-w-[1200px] md:flex-row md:flex-wrap md:gap-[30px]">
         <LatestItems stones={filteredStones} />
       </div>
       <RedButton

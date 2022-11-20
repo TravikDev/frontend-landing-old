@@ -4,7 +4,7 @@
 
 @layer components {
   .header-menu {
-    @apply absolute z-10 flex h-[60px] w-[calc(100%-10px)] items-center justify-between rounded-[92px] bg-black bg-opacity-[65%] text-[1rem] font-light text-white top-0 md:top-[40px] md:h-[70px] xl:w-[1170px];
+    @apply absolute top-0 z-10 flex h-[60px] w-[calc(100%-10px)] items-center justify-between rounded-[92px] bg-black bg-opacity-[65%] text-[1rem] font-light text-white md:top-[40px] md:h-[70px] xl:w-[1170px];
   }
 
   .slider-small-title {
@@ -44,7 +44,7 @@
   }
 
   .red-btn {
-    @apply mt-[20px] flex h-[55px] w-full items-center justify-center rounded-[42px] bg-[#FF5454] text-[16px] uppercase text-white md:mt-[30px] md:h-[65px] md:w-[225px];
+    @apply flex h-[55px] w-full items-center justify-center rounded-[42px] bg-[#FF5454] text-[16px] uppercase text-white md:h-[65px] md:w-[225px];
   }
 
   .text-h1 {
