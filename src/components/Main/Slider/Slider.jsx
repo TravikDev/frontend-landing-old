@@ -34,7 +34,7 @@ function Slider() {
     activeSlider === sliderImages.length ? "opacity-70" : "opacity-100";
 
   return (
-    <article
+    <div
       className={
         "flex h-[500px] w-full justify-center bg-auto bg-center bg-no-repeat md:h-[960px] " +
         (activeSlider === 1 ? "bg-bg1" : "bg-bg2")
@@ -111,7 +111,7 @@ function Slider() {
 
         {/* END SLIDER ARROWS */}
 
-        <section className="mt-[267px] flex w-full flex-col px-[10px] text-center text-white md:mt-[373px] xl:w-[1170px] 2xl:text-left">
+        <div className="mt-[267px] flex w-full flex-col px-[10px] text-center text-white md:mt-[373px] xl:w-[1170px] 2xl:text-left">
           <span className="slider-small-title">
             {activeSlider === 1
               ? sliderImages[0].firstTitle
@@ -123,7 +123,7 @@ function Slider() {
             {activeSlider === 1 ? firstSliderString[1] : secondSliderString[1]}
           </h1>
           <div className="mt-[15px] flex justify-center gap-[10px] md:mt-8 md:gap-6 2xl:justify-start">
-            <div className="slider-register-btn">Register Now</div>
+            <button className="slider-register-btn">Register Now</button>
             <div className="flex items-center gap-[10px]">
               <button
                 className="play-btn h-[55px] w-[55px] bg-white pl-1 md:h-[40px] md:w-[40px]"
@@ -131,17 +131,17 @@ function Slider() {
               >
                 <span />
               </button>
-              <span
+              <button
                 className="hidden cursor-pointer uppercase underline md:block"
                 onClick={() => setActivePlayOverlay(true)}
               >
                 Watch Video
-              </span>
+              </button>
             </div>
           </div>
-        </section>
+        </div>
       </div>
-    </article>
+    </div>
   );
 }
 

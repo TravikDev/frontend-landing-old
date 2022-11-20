@@ -24,7 +24,7 @@ function Header({ itemsRefScroll, catsRefScroll, contactUsRefScroll }) {
   };
 
   return (
-    <div className="flex justify-center">
+    <>
       <MobileMenuOverlay
         itemsRefScroll={itemsRefScroll}
         catsRefScroll={catsRefScroll}
@@ -34,52 +34,54 @@ function Header({ itemsRefScroll, catsRefScroll, contactUsRefScroll }) {
         toggleMobileMenu={toggleMobileMenu}
         MobileMenu={MobileMenu}
       />
-      <article className="header-menu">
-        <section className="ml-[30px] flex gap-[10px] md:ml-[50px]">
-          <img
-            src={process.env.PUBLIC_URL + "/img/logo.png"}
-            alt="logo"
-            width="44"
-            height="33"
-          />
-          <span className="text-[21px] font-bold">Logotype</span>
-        </section>
+      <header className="flex justify-center">
+        <div className="header-menu">
+          <div className="ml-[30px] flex gap-[10px] md:ml-[50px]">
+            <img
+              src={process.env.PUBLIC_URL + "/img/logo.png"}
+              alt="logo"
+              width="44"
+              height="33"
+            />
+            <span className="text-[21px] font-bold">Logotype</span>
+          </div>
 
-        <section className="hidden md:block">
-          <ListMenu
-            itemsRefScroll={itemsRefScroll}
-            catsRefScroll={catsRefScroll}
-            contactUsRefScroll={contactUsRefScroll}
-          />
-        </section>
+          <nav aria-label="primary-navigation" className="hidden md:block">
+            <ListMenu
+              itemsRefScroll={itemsRefScroll}
+              catsRefScroll={catsRefScroll}
+              contactUsRefScroll={contactUsRefScroll}
+            />
+          </nav>
 
-        <button
-          className="mr-[24px] block md:hidden"
-          ref={mobileMenuIconRef}
-          onClick={handleMobileMenuToggle}
-        >
-          <img
-            src={process.env.PUBLIC_URL + "/img/mobile/mobileMenu.svg"}
-            alt=""
-            width="24"
-            height="24"
-          />
-        </button>
+          <button
+            className="mr-[24px] block md:hidden"
+            ref={mobileMenuIconRef}
+            onClick={handleMobileMenuToggle}
+          >
+            <img
+              src={process.env.PUBLIC_URL + "/img/mobile/mobileMenu.svg"}
+              alt=""
+              width="24"
+              height="24"
+            />
+          </button>
 
-        <section className="hidden md:flex md:flex-row md:items-center">
-          <span className="cursor-pointer">Login</span>
-          <div
-            className="
+          <div className="hidden md:flex md:flex-row md:items-center">
+            <button>Login</button>
+            <div
+              className="
             mx-[8px] flex h-[55px]
-            w-[123px] cursor-pointer items-center justify-center rounded-[42px]
+            w-[123px] items-center justify-center rounded-[42px]
             bg-red-600 px-[28px]
             py-[18px]"
-          >
-            Register
+            >
+              Register
+            </div>
           </div>
-        </section>
-      </article>
-    </div>
+        </div>
+      </header>
+    </>
   );
 }
 

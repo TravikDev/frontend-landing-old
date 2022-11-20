@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useMemo } from "react";
 import stones from "../../../data/stones.json";
-import ItemsSelectors from "../../UI/ItemsSelections";
+import ItemsSelectors from "../../UI/ItemsSelectors";
 import LatestItems from "./LatestItems";
 import RedButton from "../../UI/RedButton";
 import Titles from "../../UI/Titles";
@@ -31,13 +31,11 @@ function Main({ itemsRef }) {
   const typeSortRef = useRef();
 
   const handleSelectType = (title) => {
-    console.log("work");
     setSelectedType(title);
     togglePopupType(false);
   };
 
   const handleSelectCountry = (title) => {
-    console.log("work");
     setSelectedCountry(title);
     togglePopupCountry(false);
   };
@@ -78,41 +76,45 @@ function Main({ itemsRef }) {
     <div className="flex flex-col items-center pt-[40px] md:pt-[60px]">
       <Titles
         refs={itemsRef}
-        titleH1="Discover Latest Items"
-        titleH2="Thousands of new products from quality exports around the world"
-      />
-      <section className="mt-[20px] flex w-full flex-col justify-center gap-[5px] md:flex-row md:gap-[15px]">
+        description="Thousands of new products from quality exports around the world"
+      >
+        Discover Latest Items
+      </Titles>
+      <div className="mt-[20px] flex w-full flex-col justify-center gap-[5px] md:flex-row md:gap-[15px]">
         {/* Country selection */}
 
         <ItemsSelectors
-          selectText={"Choose country"}
           selected={selectedCountry}
           sortRef={countrySortRef}
           list={countries}
           isOpenPopup={isOpenPopupCountry}
           handleClickSort={handleClickCountrySort}
           handleSelect={handleSelectCountry}
-        />
+        >
+          Choose country
+        </ItemsSelectors>
 
         {/* Type selection */}
         <ItemsSelectors
-          selectText="Choose type"
           selected={selectedType}
           sortRef={typeSortRef}
           list={types}
           isOpenPopup={isOpenPopupType}
           handleClickSort={handleClickTypeSort}
           handleSelect={handleSelectType}
-        />
-      </section>
-      <section className="mt-[30px] flex w-full flex-col justify-center gap-[20px] md:max-w-[1200px] md:flex-row md:flex-wrap md:gap-[30px]">
+        >
+          Choose type
+        </ItemsSelectors>
+      </div>
+      <div className="mt-[30px] flex w-full flex-col justify-center gap-[20px] md:max-w-[1200px] md:flex-row md:flex-wrap md:gap-[30px]">
         <LatestItems stones={filteredStones} />
-      </section>
+      </div>
       <RedButton
         isItemsList={isFullListLatest}
         handleEvent={() => toggleFullListLatest(true)}
-        title="LOAD MORE"
-      />
+      >
+        Load more
+      </RedButton>
     </div>
   );
 }

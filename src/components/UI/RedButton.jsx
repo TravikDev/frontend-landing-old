@@ -1,9 +1,9 @@
 import React from "react";
 
 function Buttons({
-  title,
   isItemsList,
   isContactButton,
+  children,
   handleEvent = (f) => f,
 }) {
   return (
@@ -14,7 +14,7 @@ function Buttons({
       onClick={handleEvent}
       type={isContactButton ? "submit" : "button"}
     >
-      {title}
+      {children}
     </button>
   );
 }

@@ -3,8 +3,8 @@ import React from "react";
 function LatestItems({ stones }) {
   return stones.length !== 0 ? (
     stones.map((stone) => (
-      <article key={stone.id}>
-        <section className="relative">
+      <div key={stone.id}>
+        <div className="relative">
           <img
             className="w-full md:max-w-[270px]"
             src={process.env.PUBLIC_URL + "/img/stones/img" + stone.id + ".jpg"}
@@ -19,9 +19,9 @@ function LatestItems({ stones }) {
               </span>
             </div>
           )}
-        </section>
+        </div>
 
-        <section className="mt-[15px] flex flex-col items-start md:mt-[20px]">
+        <div className="mt-[15px] flex flex-col items-start md:mt-[20px]">
           <span className="text-[16px]">{stone.title}</span>
           <div className="flex gap-[10px]">
             <span className="text-[20px] font-bold">
@@ -34,8 +34,8 @@ function LatestItems({ stones }) {
               {stone.discount > 0 && "$" + stone.price.toFixed(2)}
             </span>
           </div>
-        </section>
-      </article>
+        </div>
+      </div>
     ))
   ) : (
     <h1 className="mt-4 text-xl">Отсутствуют товары данной категории!</h1>

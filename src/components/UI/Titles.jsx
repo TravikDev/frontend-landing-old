@@ -1,12 +1,12 @@
 import React from "react";
 
-function Titles({ titleH1, titleH2, refs }) {
+function Titles({ description, refs, children }) {
   return (
     <>
       <h1 ref={refs} className="text-h1">
-        {titleH1}
+        {children}
       </h1>
-      <h2 className="text-center">{titleH2}</h2>
+      <p className="text-center">{description}</p>
     </>
   );
 }

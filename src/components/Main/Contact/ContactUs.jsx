@@ -19,13 +19,14 @@ function ContactUs({ contactUsRef }) {
   };
 
   return (
-    <article className="py-[40px] md:py-[60px]">
+    <div className="py-[40px] md:py-[60px]">
       <Titles
         refs={contactUsRef}
-        titleH1="Contact Us"
-        titleH2="Contact us anytime, we are ready to help you!"
-      />
-      <article ref={contactUsRef} className="mx-auto w-full md:max-w-[1170px]">
+        description="Contact us anytime, we are ready to help you!"
+      >
+        Contact Us
+      </Titles>
+      <div className="mx-auto w-full md:max-w-[1170px]">
         <Formik
           validationSchema={schema}
           onSubmit={handleSubmit}
@@ -40,8 +41,8 @@ function ContactUs({ contactUsRef }) {
         >
           {({ handleChange, values, errors }) => (
             <Form className="flex flex-col">
-              <section className="flex flex-col justify-between md:flex-row md:gap-[30px]">
-                <section className="flex w-full flex-col">
+              <div className="flex flex-col justify-between md:flex-row md:gap-[30px]">
+                <div className="flex w-full flex-col">
                   <label className="label-input">Full Name</label>
                   <input
                     name="name"
@@ -54,8 +55,8 @@ function ContactUs({ contactUsRef }) {
                     value={values.name}
                   />
                   <div className="text-error-input mt-[5px]">{errors.name}</div>
-                </section>
-                <section className="flex w-full flex-col">
+                </div>
+                <div className="flex w-full flex-col">
                   <label className="label-input">Email</label>
                   <input
                     name="email"
@@ -70,8 +71,8 @@ function ContactUs({ contactUsRef }) {
                   <div className="text-error-input mt-[5px]">
                     {errors.email}
                   </div>
-                </section>
-              </section>
+                </div>
+              </div>
 
               <label className="label-input">Subject</label>
               <input
@@ -96,14 +97,14 @@ function ContactUs({ contactUsRef }) {
                 value={values.message}
               />
               <div className="text-error-input mt-[5px]">{errors.message}</div>
-              <section className="flex justify-center">
-                <RedButton isContactButton={true} title="SEND MESSAGE" />
-              </section>
+              <div className="flex justify-center">
+                <RedButton isContactButton={true}>Send message</RedButton>
+              </div>
             </Form>
           )}
         </Formik>
-      </article>
-    </article>
+      </div>
+    </div>
   );
 }
 

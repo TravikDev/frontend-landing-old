@@ -10,8 +10,12 @@ export const ListMenu = ({
 
   return (
     <ul className="flex list-none gap-[40px]">
-      {menuItems.map((item, i) => (
-        <li onClick={refArray[i]} className="cursor-pointer" key={item.id}>
+      {menuItems.map((item) => (
+        <li
+          onClick={refArray[item.id - 1]}
+          className="cursor-pointer"
+          key={item.id}
+        >
           {item.title}
         </li>
       ))}
@@ -26,9 +30,9 @@ export const MobileMenu = ({
 }) => {
   const refArray = [itemsRefScroll, catsRefScroll, contactUsRefScroll];
 
-  return menuItems.map((item, i) => (
+  return menuItems.map((item) => (
     <li
-      onClick={refArray[i]}
+      onClick={refArray[item.id - 1]}
       className="cursor-pointer text-[16px] font-bold uppercase leading-8 text-black"
       key={item.id}
     >

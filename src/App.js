@@ -18,19 +18,21 @@ function App() {
 
   return (
     <>
+      <Slider />
       <Header
         itemsRefScroll={itemsRefScroll}
         catsRefScroll={catsRefScroll}
         contactUsRefScroll={contactUsRefScroll}
       />
-      <Slider />
-      <div className="px-[10px]">
-        <Latest itemsRef={itemsRef} />
+      <main aria-label="primary-navigation">
+        <div className="px-[10px]">
+          <Latest itemsRef={itemsRef} />
 
-        <Categories catsRef={catsRef} />
+          <Categories catsRef={catsRef} />
 
-        <ContactUs contactUsRef={contactUsRef} />
-      </div>
+          <ContactUs contactUsRef={contactUsRef} />
+        </div>
+      </main>
       <Footer />
     </>
   );

@@ -11,7 +11,7 @@ function MobileMenuOverlay({
 }) {
   return (
     isMobileMenuOpen && (
-      <article
+      <div
         ref={mobileMenuRef}
         className="fixed right-0 top-0 z-20 h-[120%] w-[260px] bg-white"
       >
@@ -26,7 +26,7 @@ function MobileMenuOverlay({
             height="36"
           />
         </button>
-        <nav>
+        <nav aria-label="mobile-menu">
           <ul className="mt-[111px] flex list-none flex-col items-center">
             <MobileMenu
               itemsRefScroll={itemsRefScroll}
@@ -34,13 +34,13 @@ function MobileMenuOverlay({
               contactUsRefScroll={contactUsRefScroll}
             />
 
-            <section className="mt-[40px] flex flex-col text-center leading-8 text-[#ff5454]">
-              <span className="cursor-pointer">Login</span>
-              <span className="cursor-pointer">Register</span>
-            </section>
+            <div className="mt-[40px] flex flex-col text-center leading-8 text-[#ff5454]">
+              <a href="/">Login</a>
+              <a href="/">Register</a>
+            </div>
           </ul>
         </nav>
-      </article>
+      </div>
     )
   );
 }

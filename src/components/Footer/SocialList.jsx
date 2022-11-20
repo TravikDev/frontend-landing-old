@@ -3,18 +3,20 @@ import socials from "../../data/socials.json";
 
 function SocialList() {
   return (
-    <section className="flex justify-center gap-[15px]">
+    <ul className="flex list-none justify-center gap-[15px]">
       {socials.map((social) => (
-        <a href={social.url} target="_blank" key={social.id}>
-          <img
-            src={process.env.PUBLIC_URL + social.img}
-            width="40px"
-            height="40px"
-            alt={social.title}
-          />
-        </a>
+        <li key={social.id}>
+          <a href={social.url} target="_blank" rel="noreferrer">
+            <img
+              src={process.env.PUBLIC_URL + social.img}
+              width="40px"
+              height="40px"
+              alt={social.title}
+            />
+          </a>
+        </li>
       ))}
-    </section>
+    </ul>
   );
 }
 

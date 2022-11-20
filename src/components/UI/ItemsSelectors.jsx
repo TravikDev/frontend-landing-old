@@ -7,13 +7,13 @@ function Selections({
   handleClickSort = (f) => f,
   handleSelect = (f) => f,
   selected,
-  selectText,
+  children,
 }) {
   return (
     <div className="relative md:mx-0" ref={sortRef}>
       <button className="sort-btn" onClick={handleClickSort}>
-        <span className="text-[#333333]">{selected || selectText}</span>
-        {isOpenPopup ? (
+        <span className="text-[#333333]">{selected || children}</span>
+        {!!isOpenPopup ? (
           <img
             src={process.env.PUBLIC_URL + "/img/arrows/arrowPopUp.svg"}
             alt=""
@@ -30,13 +30,13 @@ function Selections({
         )}
       </button>
 
-      {isOpenPopup && (
+      {isOpenPopup > 0 && (
         <section className="sort-popup">
           <ul className="ul-popup">
             {list.map((item) => (
               <li
                 className={
-                  "w-full  cursor-pointer pl-[30px] leading-[30px] " +
+                  "w-full cursor-pointer pl-[30px] leading-[30px] " +
                   (item === selected && "bg-[#FF5454] text-white")
                 }
                 key={item}
