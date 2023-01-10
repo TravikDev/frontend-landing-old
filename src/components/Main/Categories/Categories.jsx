@@ -2,8 +2,12 @@ import React from "react";
 import Titles from "../../UI/Titles";
 import categories from "../../../data/categories.json";
 import CategoryItem from "../../UI/CategoryItem";
+import { useResultColRowArray } from "../../Hooks/catRenderHook";
 
 function Categories({ catsRef }) {
+  const length = categories.length;
+  const resultColRowArray = useResultColRowArray(length);
+
   return (
     <div className="pt-[40px] md:pt-[60px]">
       <Titles
@@ -23,8 +27,8 @@ function Categories({ catsRef }) {
           return (
             <CategoryItem
               key={category.id}
-              catsCount={categories.length}
               {...category}
+              {...resultColRowArray}
             />
           );
         })}
