@@ -5,12 +5,7 @@ import { ReactComponent as Instagram } from "../../assets/social/instagram.svg";
 import { ReactComponent as Twitter } from "../../assets/social/twitter.svg";
 import { ReactComponent as Youtube } from "../../assets/social/youtube.svg";
 
-const socialList = {
-  1: <Facebook />,
-  2: <Instagram />,
-  3: <Twitter />,
-  4: <Youtube />,
-};
+const socialList = [<Facebook />,<Instagram />,<Twitter />,<Youtube />];
 
 function SocialList() {
   return (

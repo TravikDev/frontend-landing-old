@@ -1,18 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { ListMenu } from "./ListMenu";
 import MobileMenuOverlay from "./MobileMenuOverlay";
 
 function Header({ itemsRefScroll, catsRefScroll, contactUsRefScroll }) {
-  // const mobileMenuRef = useRef();
-  // const mobileMenuIconRef = useRef();
-
-  useEffect(() => {
-    console.log("rendered");
-  }, []);
 
   return (
-    <header className="z-10 flex justify-center">
-      <div className="header-menu">
+    <header className="flex justify-center">
+      <div className="header-menu z-20">
         <a href="/" className="ml-[30px] flex gap-[10px] md:ml-[50px]">
           <img
             src={process.env.PUBLIC_URL + "/img/logo.png"}

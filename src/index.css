@@ -20,7 +20,7 @@
   }
 
   .cat-btn {
-    @apply flex h-[65px] w-[300px] items-center justify-center rounded-full bg-white text-[15px] font-bold md:w-[325px];
+    @apply flex px-4 mx-4 h-[65px] w-[300px] items-center justify-center rounded-full bg-white text-[15px] font-bold md:w-[325px];
   }
 
   .cat-btn-items {
