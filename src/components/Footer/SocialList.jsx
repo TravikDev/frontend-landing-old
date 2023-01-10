@@ -1,18 +1,29 @@
 import React from "react";
 import socials from "../../data/socials.json";
+import { ReactComponent as Facebook } from "../../assets/social/facebook.svg";
+import { ReactComponent as Instagram } from "../../assets/social/instagram.svg";
+import { ReactComponent as Twitter } from "../../assets/social/twitter.svg";
+import { ReactComponent as Youtube } from "../../assets/social/youtube.svg";
+
+const socialList = {
+  1: <Facebook />,
+  2: <Instagram />,
+  3: <Twitter />,
+  4: <Youtube />,
+};
 
 function SocialList() {
   return (
     <ul className="flex list-none justify-center gap-[15px]">
       {socials.map((social) => (
         <li key={social.id}>
-          <a href={social.url} target="_blank" rel="noreferrer">
-            <img
-              src={process.env.PUBLIC_URL + social.img}
-              width="40px"
-              height="40px"
-              alt={social.title}
-            />
+          <a
+            href={social.url}
+            className="h-[40px] w-[40px]"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {socialList[social.id]}
           </a>
         </li>
       ))}

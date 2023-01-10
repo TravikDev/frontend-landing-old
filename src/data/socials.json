@@ -2,25 +2,25 @@
   {
     "id": 1,
     "title": "facebook",
-    "img": "/img/social/Facebook.png",
+    "svg": "/img/social/facebook.svg",
     "url": "https://facebook.com"
   },
   {
     "id": 2,
     "title": "twitter",
-    "img": "/img/social/Twitter.png",
+    "svg": "/img/social/twitter.svg",
     "url": "https://twitter.com"
   },
   {
     "id": 3,
     "title": "youtube",
-    "img": "/img/social/Youtube.png",
+    "svg": "/img/social/youtube.svg",
     "url": "https://youtube.com"
   },
   {
     "id": 4,
     "title": "instagram",
-    "img": "/img/social/Instagram.png",
+    "svg": "/img/social/instagram.svg",
     "url": "https://instagram.com"
   }
 ]

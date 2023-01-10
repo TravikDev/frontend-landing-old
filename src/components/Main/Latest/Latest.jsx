@@ -7,6 +7,7 @@ import Titles from "../../UI/Titles";
 
 function Main({ itemsRef }) {
   const [countries] = useState([
+    "All countries",
     "United Arab Emirates",
     "Russia",
     "Australia",
@@ -14,6 +15,7 @@ function Main({ itemsRef }) {
     "India",
   ]);
   const [types] = useState([
+    "All types",
     "Cultured Stone",
     "Decorative Stone",
     "Interior Stone",
@@ -50,16 +52,24 @@ function Main({ itemsRef }) {
 
   const filteredStones = useMemo(() => {
     const filtered = stones.filter((stone) => {
-      if (selectedCountry !== "" && stone.country !== selectedCountry) {
+      if (
+        selectedCountry !== "" &&
+        selectedCountry !== "All countries" &&
+        stone.country !== selectedCountry
+      ) {
         return false;
       }
-      if (selectedType !== "" && stone.type !== selectedType) {
+      if (
+        selectedType !== "" &&
+        selectedType !== "All types" &&
+        stone.type !== selectedType
+      ) {
         return false;
       }
       return true;
     });
-    return isFullListLatest === false ? filtered.slice(0, 8) : filtered;
-  }, [selectedCountry, selectedType, isFullListLatest]);
+    return filtered;
+  }, [selectedCountry, selectedType]);
 
   useEffect(() => {
     document.body.addEventListener("click", (event) => {
@@ -106,15 +116,23 @@ function Main({ itemsRef }) {
           Choose type
         </ItemsSelectors>
       </div>
-      <div className="my-[20px] flex w-full flex-col justify-center gap-[20px] md:my-[30px] md:max-w-[1200px] md:flex-row md:flex-wrap md:gap-[30px]">
-        <LatestItems stones={filteredStones} />
+      <div className="my-[20px] flex w-full max-w-[330px] flex-col justify-center gap-[20px] md:my-[30px] md:max-w-[1200px] md:flex-row md:flex-wrap md:gap-[30px]">
+        <LatestItems
+          stones={
+            isFullListLatest === false
+              ? filteredStones.slice(0, 8)
+              : filteredStones
+          }
+        />
       </div>
-      <RedButton
-        isItemsList={isFullListLatest}
-        handleEvent={() => toggleFullListLatest(true)}
-      >
-        Load more
-      </RedButton>
+      {filteredStones.length > 8 ? (
+        <RedButton
+          isItemsList={isFullListLatest}
+          handleEvent={() => toggleFullListLatest(true)}
+        >
+          Load more
+        </RedButton>
+      ) : null}
     </div>
   );
 }

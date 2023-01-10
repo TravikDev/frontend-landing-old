@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Cultured Stone",
+    "count": 1022,
+    "gridStyle": "md:col-span-2 md:row-span-3"
+  },
+  {
+    "id": 2,
+    "title": "Decorative Stone",
+    "count": 998
+  },
+  {
+    "id": 3,
+    "title": "Decorative Stone",
+    "count": 842
+  },
+  {
+    "id": 4,
+    "title": "Interior Stone",
+    "count": 380
+  },
+  {
+    "id": 5,
+    "title": "Street Stone",
+    "count": 723
+  },
+  {
+    "id": 6,
+    "title": "Facade Stone",
+    "count": 576
+  }
+  ]
+  

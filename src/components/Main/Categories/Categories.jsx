@@ -1,5 +1,7 @@
 import React from "react";
 import Titles from "../../UI/Titles";
+import categories from "../../../data/categories.json";
+import CategoryItem from "../../UI/CategoryItem";
 
 function Categories({ catsRef }) {
   return (
@@ -12,79 +14,20 @@ function Categories({ catsRef }) {
         Our Categories
       </Titles>
 
-      <div className="mt-[30px] flex w-full flex-col gap-[5px] md:grid md:h-[755px] md:grid-cols-4 md:grid-rows-3 md:gap-[10px]">
-        <section className="cat-items bg-cat1 md:col-span-2 md:row-span-3">
-          <span className="cat-btn">
-            <h2 className="text-center">Cultured Stone</h2>
-            <span className="cat-btn-items">1022 items</span>
-            <img
-              src={process.env.PUBLIC_URL + "/img/arrows/arrowRight.svg"}
-              width="9"
-              height="14"
-              alt="right Arrow"
+      <div
+        className={`mx-auto mt-[30px] flex w-full flex-col gap-[5px] md:grid md:max-w-[1920px] md:grid-flow-row md:grid-cols-4 md:gap-[10px] md:grid-rows-${
+          categories.length / 2
+        }`}
+      >
+        {categories.map((category) => {
+          return (
+            <CategoryItem
+              key={category.id}
+              catsCount={categories.length}
+              {...category}
             />
-          </span>
-        </section>
-        <section className="cat-items bg-cat2 md:col-span-1 md:row-span-1">
-          <span className="cat-btn">
-            <h2 className="text-center">Decorative Stone</h2>
-            <span className="cat-btn-items">998 items</span>
-            <img
-              src={process.env.PUBLIC_URL + "/img/arrows/arrowRight.svg"}
-              width="9"
-              height="14"
-              alt="right Arrow"
-            />
-          </span>
-        </section>
-        <section className="cat-items bg-cat3 md:col-span-1 md:row-span-1">
-          <span className="cat-btn">
-            <h2 className="text-center">Decorative Stone</h2>
-            <span className="cat-btn-items">842 items</span>
-            <img
-              src={process.env.PUBLIC_URL + "/img/arrows/arrowRight.svg"}
-              width="9"
-              height="14"
-              alt="right Arrow"
-            />
-          </span>
-        </section>
-        <section className="cat-items bg-cat4 md:col-span-2 md:row-span-1">
-          <span className="cat-btn">
-            <h2 className="text-center">Interior Stone</h2>
-            <span className="cat-btn-items">380 items</span>
-            <img
-              src={process.env.PUBLIC_URL + "/img/arrows/arrowRight.svg"}
-              width="9"
-              height="14"
-              alt="right Arrow"
-            />
-          </span>
-        </section>
-        <section className="cat-items bg-cat5 md:col-span-1 md:row-span-1">
-          <span className="cat-btn">
-            <h2 className="text-center">Street Stone</h2>
-            <span className="cat-btn-items">723 items</span>
-            <img
-              src={process.env.PUBLIC_URL + "/img/arrows/arrowRight.svg"}
-              width="9"
-              height="14"
-              alt="right Arrow"
-            />
-          </span>
-        </section>
-        <section className="cat-items bg-cat6 md:col-span-1 md:row-span-1">
-          <span className="cat-btn">
-            <h2 className="text-center">Facade Stone</h2>
-            <span className="cat-btn-items">576 items</span>
-            <img
-              src={process.env.PUBLIC_URL + "/img/arrows/arrowRight.svg"}
-              width="9"
-              height="14"
-              alt="right Arrow"
-            />
-          </span>
-        </section>
+          );
+        })}
       </div>
     </div>
   );

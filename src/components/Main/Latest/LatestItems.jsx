@@ -6,7 +6,7 @@ function LatestItems({ stones }) {
       <div key={stone.id}>
         <div className="relative">
           <img
-            className="w-full md:max-w-[270px]"
+            className="w-full max-w-[330px] md:max-w-[270px]"
             src={process.env.PUBLIC_URL + "/img/stones/img" + stone.id + ".jpg"}
             alt={stone.title}
             width="270px"

@@ -12,9 +12,9 @@ function App() {
   const catsRef = useRef(null);
   const contactUsRef = useRef(null);
 
-  const itemsRefScroll = () => itemsRef.current.scrollIntoView();
-  const catsRefScroll = () => catsRef.current.scrollIntoView();
-  const contactUsRefScroll = () => contactUsRef.current.scrollIntoView();
+  const itemsRefScroll = () => itemsRef.current.scrollIntoView({behavior: 'smooth'});
+  const catsRefScroll = () => catsRef.current.scrollIntoView({behavior: 'smooth'});
+  const contactUsRefScroll = () => contactUsRef.current.scrollIntoView({behavior: 'smooth'});
 
   return (
     <>

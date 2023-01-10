@@ -41,9 +41,9 @@ function ContactUs({ contactUsRef }) {
         >
           {({ handleChange, values, errors }) => (
             <Form>
-              <div className="mb-[20px] flex flex-col md:mb-[30px]">
-                <div className="flex flex-col justify-between md:flex-row md:gap-[30px]">
-                  <div className="flex w-full flex-col">
+              <div className="mb-[20px] flex flex-col gap-[20px] md:mb-[30px] md:gap-[30px]">
+                <div className="flex flex-col justify-between md:flex-row  md:gap-[30px]">
+                  <div className="relative mt-[20px] flex w-full  flex-col md:mt-[30px]">
                     <label className="label-input">Full Name</label>
                     <input
                       name="name"
@@ -55,11 +55,11 @@ function ContactUs({ contactUsRef }) {
                       onChange={handleChange}
                       value={values.name}
                     />
-                    <div className="text-error-input mt-[5px]">
+                    <div className="text-error-input absolute -bottom-5 mt-[5px]">
                       {errors.name}
                     </div>
                   </div>
-                  <div className="flex w-full flex-col">
+                  <div className="relative mt-[20px] flex w-full flex-col md:mt-[30px]">
                     <label className="label-input">Email</label>
                     <input
                       name="email"
@@ -71,39 +71,42 @@ function ContactUs({ contactUsRef }) {
                       onChange={handleChange}
                       value={values.email}
                     />
-                    <div className="text-error-input mt-[5px]">
+                    <div className="text-error-input absolute -bottom-5 mt-[5px]">
                       {errors.email}
                     </div>
                   </div>
                 </div>
-
-                <label className="label-input">Subject</label>
-                <input
-                  name="subject"
-                  type="text"
-                  className={
-                    "text-input " + (!!errors.name && "border-[#FF5454]")
-                  }
-                  placeholder="Type your subject here"
-                  onChange={handleChange}
-                  value={values.subject}
-                />
-                <div className="text-error-input mt-[5px]">
-                  {errors.subject}
+                <div className="relative">
+                  <label className="label-input">Subject</label>
+                  <input
+                    name="subject"
+                    type="text"
+                    className={
+                      "text-input " + (!!errors.subject && "border-[#FF5454]")
+                    }
+                    placeholder="Type your subject here"
+                    onChange={handleChange}
+                    value={values.subject}
+                  />
+                  <div className="text-error-input absolute -bottom-[20px]">
+                    {errors.subject}
+                  </div>
                 </div>
-                <label className="label-input">Message</label>
-                <textarea
-                  name="message"
-                  className={
-                    "msg-error-input " +
-                    (!!errors.message && "border-[#FF5454]")
-                  }
-                  placeholder="Type your message here"
-                  onChange={handleChange}
-                  value={values.message}
-                />
-                <div className="text-error-input mt-[5px]">
-                  {errors.message}
+                <div className="relative">
+                  <label className="label-input">Message</label>
+                  <textarea
+                    name="message"
+                    className={
+                      "msg-error-input " +
+                      (!!errors.message && "border-[#FF5454]")
+                    }
+                    placeholder="Type your message here"
+                    onChange={handleChange}
+                    value={values.message}
+                  />
+                  <div className="text-error-input absolute -bottom-[14px]">
+                    {errors.message}
+                  </div>
                 </div>
               </div>
               <div className="flex justify-center">

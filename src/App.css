@@ -14,3 +14,7 @@
   border-left: 11.5px solid #eb3434;
   margin: auto;
 }
+
+.disable-scroll {
+  overflow: hidden;
+}

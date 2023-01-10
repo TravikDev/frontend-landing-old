@@ -16,7 +16,7 @@
   }
 
   .slider-register-btn {
-    @apply flex h-[55px] w-full cursor-pointer items-center justify-center rounded-[42px] bg-[#FF5454] text-[16px] uppercase md:h-[65px] md:w-[225px];
+    @apply flex h-[55px] w-[265px] cursor-pointer items-center justify-center rounded-[42px] bg-[#FF5454] text-[16px] uppercase md:h-[65px] md:w-[225px];
   }
 
   .cat-btn {
@@ -44,7 +44,7 @@
   }
 
   .red-btn {
-    @apply flex h-[55px] w-full items-center justify-center rounded-[42px] bg-[#FF5454] text-[16px] uppercase text-white md:h-[65px] md:w-[225px];
+    @apply flex h-[55px] w-[265px] items-center justify-center rounded-[42px] bg-[#FF5454] text-[16px] uppercase text-white md:h-[65px] md:w-[225px];
   }
 
   .text-h1 {
@@ -52,11 +52,11 @@
   }
 
   .text-input {
-    @apply h-[55px] w-full rounded-[33px] border-[1px] border-[#9E9E9E] px-[25px] placeholder:py-[18px];
+    @apply mt-[10px] h-[55px] w-full rounded-[33px] border-[1px] border-[#9E9E9E] px-[25px] placeholder:py-[18px];
   }
 
   .label-input {
-    @apply mt-[20px] mb-[10px] text-left text-[18px] font-bold md:mt-[30px];
+    @apply text-left text-[18px] font-bold;
   }
 
   .footer-link {
@@ -68,7 +68,7 @@
   }
 
   .msg-error-input {
-    @apply h-[180px] w-full rounded-[33px] border-[1px] border-[#9E9E9E] py-[18px] px-[25px] md:h-[180px];
+    @apply mt-[10px] h-[180px] w-full rounded-[33px] border-[1px] border-[#9E9E9E] py-[18px] px-[25px] md:h-[180px];
   }
 }
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PlayOverlay from "./PlayOverlay";
 
 function Slider() {
@@ -16,6 +16,12 @@ function Slider() {
   ]);
   const [activeSlider, toggleActiveSlider] = useState(1);
   const [activePlayOverlay, setActivePlayOverlay] = useState(false);
+
+  useEffect(() => {
+    activePlayOverlay
+      ? document.body.classList.add("disable-scroll")
+      : document.body.classList.remove("disable-scroll");
+  }, [activePlayOverlay]);
 
   const firstSliderString = sliderImages[0].secondTitle.split("!");
   const secondSliderString = sliderImages[1].secondTitle.split("!");
@@ -35,12 +41,16 @@ function Slider() {
 
   return (
     <div
-      className={
-        "flex h-[500px] w-full justify-center bg-auto bg-center bg-no-repeat md:h-[960px] " +
-        (activeSlider === 1 ? "bg-bg1" : "bg-bg2")
-      }
+      className={"relative flex h-[500px] w-full justify-center md:h-[960px] "}
     >
-      {activePlayOverlay !== false && (
+      <img
+        className="absolute min-h-[500px] object-none md:min-h-[960px]"
+        height="960"
+        width="1920"
+        src={process.env.PUBLIC_URL + "/img/slider/bg" + activeSlider + ".jpg"}
+        alt=""
+      />
+      {!!activePlayOverlay && (
         <PlayOverlay
           activePlayOverlay={activePlayOverlay}
           onClose={setActivePlayOverlay}
@@ -51,7 +61,7 @@ function Slider() {
         {/* START SLIDER ARROWS */}
 
         {/* FULL */}
-        <div className="absolute left-0 top-[445px] ml-[100px] hidden md:block">
+        <div className="absolute left-0 top-[445px] z-10 ml-[100px] hidden md:block">
           <button onClick={handleClickPreviousSlider}>
             <img
               className={leftArrow}
@@ -63,7 +73,7 @@ function Slider() {
           </button>
         </div>
 
-        <div className="absolute right-0 mr-[100px] hidden md:top-[445px] md:block ">
+        <div className="absolute right-0 z-10 mr-[100px] hidden md:top-[445px] md:block">
           <button onClick={handleClickNextSlider}>
             <img
               className={rightArrow}
@@ -111,7 +121,7 @@ function Slider() {
 
         {/* END SLIDER ARROWS */}
 
-        <div className="mt-[267px] flex w-full flex-col px-[10px] text-center text-white md:mt-[373px] xl:w-[1170px] 2xl:text-left">
+        <div className="z-0 mt-[267px] flex w-full flex-col text-center text-white md:mt-[373px] md:px-[170px] xl:w-[1170px] 2xl:text-left">
           <span className="slider-small-title">
             {activeSlider === 1
               ? sliderImages[0].firstTitle
