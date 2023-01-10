@@ -13,7 +13,7 @@ function LatestItems({ stones }) {
             height="200px"
           />
           {stone.discount > 0 && (
-            <div className="absolute top-[10px] left-[15px] h-[48px] w-[48px] rounded-full  bg-[#FF5454] text-white">
+            <div className="absolute top-[15px] left-[15px] h-[48px] w-[48px] rounded-full  bg-[#FF5454] text-white">
               <span className="flex items-center justify-center pt-[11px]">
                 {stone.discount}%
               </span>
