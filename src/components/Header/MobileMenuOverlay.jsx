@@ -1,46 +1,32 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
+import useOnClickOutside from "../Hooks/useOnClickOutside";
 import { MobileMenu } from "./ListMenu";
 
 function MobileMenuOverlay({
   itemsRefScroll,
   catsRefScroll,
   contactUsRefScroll,
-  // mobileMenuRef,
 }) {
+  // state of menu overlay
   const [isMobileMenuOpen, toggleMobileMenu] = useState(false);
 
+  // show on/off menu overlay
   const onBurgerClick = () => {
     toggleMobileMenu((state) => !state);
   };
 
-  const mobileMenuRef = useRef(null);
-  const burgerIconRef = useRef(null);
-
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (
-        mobileMenuRef.current &&
-        !mobileMenuRef.current.contains(event.target) &&
-        !burgerIconRef.current.contains(event.target)
-      ) {
-        toggleMobileMenu(false);
-      }
-    }
-
-    document.addEventListener("click", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
+  const overlayRef = useRef(null);
+  const btnRef = useRef(null);
+  // hook that can help us close popup when clicked outside
+  useOnClickOutside(overlayRef, btnRef, () => toggleMobileMenu(false));
 
   return (
+    // Burger button
     <>
       <button
         className="mr-[24px] block md:hidden"
-        // ref={mobileMenuIconRef}
-        ref={burgerIconRef}
         onClick={onBurgerClick}
+        ref={btnRef}
       >
         <img
           src={process.env.PUBLIC_URL + "/img/mobile/mobileMenu.svg"}
@@ -49,12 +35,14 @@ function MobileMenuOverlay({
           height="24"
         />
       </button>
+
+      {/* Overlay mobile menu */}
       {isMobileMenuOpen && (
         <div
-          // onClick={onBurgerClick}
-          ref={mobileMenuRef}
-          className="fixed right-0 top-0 h-[120%] w-[260px] bg-white"
+          className="fixed right-0 top-0 z-50 h-[120%] w-[260px] bg-white"
+          ref={overlayRef}
         >
+          {/* Close Button */}
           <button
             className="absolute top-[10px] right-[21px]"
             onClick={onBurgerClick}
@@ -66,6 +54,8 @@ function MobileMenuOverlay({
               height="36"
             />
           </button>
+
+          {/* Mobile navigation list menu */}
           <nav aria-label="mobile-menu">
             <ul className="mt-[111px] flex list-none flex-col items-center">
               <MobileMenu
@@ -74,6 +64,8 @@ function MobileMenuOverlay({
                 contactUsRefScroll={contactUsRefScroll}
               />
             </ul>
+
+            {/* Login and Register list */}
             <ul className="mt-[40px] flex flex-col text-center leading-8 text-[#ff5454]">
               <li>
                 <a href="/">Login</a>

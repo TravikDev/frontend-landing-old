@@ -3,10 +3,11 @@ import { ListMenu } from "./ListMenu";
 import MobileMenuOverlay from "./MobileMenuOverlay";
 
 function Header({ itemsRefScroll, catsRefScroll, contactUsRefScroll }) {
-
   return (
+    // Top header
     <header className="flex justify-center">
       <div className="header-menu z-20">
+        {/* Logotype icons with text */}
         <a href="/" className="ml-[30px] flex gap-[10px] md:ml-[50px]">
           <img
             src={process.env.PUBLIC_URL + "/img/logo.png"}
@@ -17,6 +18,7 @@ function Header({ itemsRefScroll, catsRefScroll, contactUsRefScroll }) {
           <span className="text-[21px] font-bold">Logotype</span>
         </a>
 
+        {/* Navigation bar for PC resolution*/}
         <nav aria-label="primary-navigation" className="hidden md:block">
           <ListMenu
             itemsRefScroll={itemsRefScroll}
@@ -25,15 +27,14 @@ function Header({ itemsRefScroll, catsRefScroll, contactUsRefScroll }) {
           />
         </nav>
 
+        {/* Navigation burger icon with menu in overlay for mobile resolution */}
         <MobileMenuOverlay
           itemsRefScroll={itemsRefScroll}
           catsRefScroll={catsRefScroll}
           contactUsRefScroll={contactUsRefScroll}
-          // mobileMenuRef={mobileMenuRef}
-          // MobileMenu={MobileMenu}
-          // onClick={toggleMenu}
         />
 
+        {/* Login and Register buttons for PC resolutions */}
         <div className="hidden md:flex md:flex-row md:items-center">
           <a href="/">Login</a>
           <a

@@ -13,6 +13,7 @@ const schema = Yup.object().shape({
   message: Yup.string().required("This field is required!"),
 });
 
+// Console form output
 function ContactUs({ contactUsRef }) {
   const handleSubmit = (values) => {
     console.log(values);

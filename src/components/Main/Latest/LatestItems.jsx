@@ -1,9 +1,11 @@
 import React from "react";
 
 function LatestItems({ stones }) {
-  return stones.length !== 0 ? (
+  // Show list of items. If no items - show the message
+  return stones.length ? (
     stones.map((stone) => (
       <div key={stone.id}>
+        {/* Image block of each item */}
         <div className="relative">
           <img
             className="w-full max-w-[330px] md:max-w-[270px]"
@@ -12,7 +14,8 @@ function LatestItems({ stones }) {
             width="270px"
             height="200px"
           />
-          {stone.discount > 0 && (
+          {/* If stone discount exists - put icon at the top-left corner */}
+          {!!stone.discount && (
             <div className="absolute top-[15px] left-[15px] h-[48px] w-[48px] rounded-full  bg-[#FF5454] text-white">
               <span className="flex items-center justify-center pt-[11px]">
                 {stone.discount}%
@@ -21,24 +24,29 @@ function LatestItems({ stones }) {
           )}
         </div>
 
+        {/* Desription of items */}
         <div className="mt-[15px] flex flex-col items-start md:mt-[20px]">
+          {/* Item title */}
           <span className="text-[16px]">{stone.title}</span>
+          {/* Image of item and discount if it exist */}
           <div className="flex gap-[10px]">
             <span className="text-[20px] font-bold">
-              $
-              {stone.discount
+              ${/* Calculate current price if discount exists */}
+              {!!stone.discount
                 ? ((stone.price / 100) * (100 - stone.discount)).toFixed(2)
                 : stone.price.toFixed(2)}
             </span>
             <span className="text-[20px] text-[#9E9E9E] line-through">
-              {stone.discount > 0 && "$" + stone.price.toFixed(2)}
+              {/* Previous prise if discount exists */}
+              {!!stone.discount && "$" + stone.price.toFixed(2)}
             </span>
           </div>
         </div>
       </div>
     ))
   ) : (
-    <h1 className="mt-4 text-xl">Отсутствуют товары данной категории!</h1>
+    // No items message
+    <h1 className="mt-4 text-xl">No items</h1>
   );
 }
 

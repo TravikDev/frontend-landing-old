@@ -40,7 +40,7 @@
   }
 
   .sort-popup {
-    @apply absolute top-[55px] z-20 flex w-full items-center justify-between overflow-hidden rounded-[28px] border-[1px] border-[#D6D6D6] bg-white md:w-[238px];
+    @apply absolute top-[55px] z-10 flex w-full items-center justify-between overflow-hidden rounded-[28px] border-[1px] border-[#D6D6D6] bg-white md:w-[238px];
   }
 
   .red-btn {

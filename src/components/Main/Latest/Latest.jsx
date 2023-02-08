@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import stones from "../../../data/stones.json";
 import ItemsSelectors from "../../UI/ItemsSelectors";
 import LatestItems from "./LatestItems";
@@ -24,45 +24,24 @@ function Main({ itemsRef }) {
   ]);
 
   const [isFullListLatest, toggleFullListLatest] = useState(false);
-  const [isOpenPopupCountry, togglePopupCountry] = useState(false);
-  const [isOpenPopupType, togglePopupType] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState("");
   const [selectedType, setSelectedType] = useState("");
 
-  const countrySortRef = useRef();
-  const typeSortRef = useRef();
-
-  const handleSelectType = (title) => {
-    setSelectedType(title);
-    togglePopupType(false);
-  };
-
-  const handleSelectCountry = (title) => {
-    setSelectedCountry(title);
-    togglePopupCountry(false);
-  };
-
-  const handleClickCountrySort = () => {
-    togglePopupCountry(!isOpenPopupCountry);
-  };
-
-  const handleClickTypeSort = () => {
-    togglePopupType(!isOpenPopupType);
-  };
-
+  // Filtering of items based on selected type and category
+  // useMemo for recalculating if deps value was changed
   const filteredStones = useMemo(() => {
     const filtered = stones.filter((stone) => {
       if (
         selectedCountry !== "" &&
         selectedCountry !== "All countries" &&
-        stone.country !== selectedCountry
+        selectedCountry !== stone.country
       ) {
         return false;
       }
       if (
         selectedType !== "" &&
         selectedType !== "All types" &&
-        stone.type !== selectedType
+        selectedType !== stone.type
       ) {
         return false;
       }
@@ -70,17 +49,6 @@ function Main({ itemsRef }) {
     });
     return filtered;
   }, [selectedCountry, selectedType]);
-
-  useEffect(() => {
-    document.body.addEventListener("click", (event) => {
-      if (!event.path.includes(countrySortRef.current)) {
-        togglePopupCountry(false);
-      }
-      if (!event.path.includes(typeSortRef.current)) {
-        togglePopupType(false);
-      }
-    });
-  }, []);
 
   return (
     <div className="flex flex-col items-center pt-[40px] md:pt-[60px]">
@@ -95,11 +63,8 @@ function Main({ itemsRef }) {
 
         <ItemsSelectors
           selected={selectedCountry}
-          sortRef={countrySortRef}
           list={countries}
-          isOpenPopup={isOpenPopupCountry}
-          handleClickSort={handleClickCountrySort}
-          handleSelect={handleSelectCountry}
+          handleSelect={(title) => setSelectedCountry(title)}
         >
           Choose country
         </ItemsSelectors>
@@ -107,17 +72,16 @@ function Main({ itemsRef }) {
         {/* Type selection */}
         <ItemsSelectors
           selected={selectedType}
-          sortRef={typeSortRef}
           list={types}
-          isOpenPopup={isOpenPopupType}
-          handleClickSort={handleClickTypeSort}
-          handleSelect={handleSelectType}
+          handleSelect={(title) => setSelectedType(title)}
         >
           Choose type
         </ItemsSelectors>
       </div>
+      {/* Block of listed stones */}
       <div className="my-[20px] flex w-full max-w-[330px] flex-col justify-center gap-[20px] md:my-[30px] md:max-w-[1200px] md:flex-row md:flex-wrap md:gap-[30px]">
         <LatestItems
+          // if was clicked "show all" button - show all list, if not - only 8 elements
           stones={
             isFullListLatest === false
               ? filteredStones.slice(0, 8)
@@ -125,14 +89,16 @@ function Main({ itemsRef }) {
           }
         />
       </div>
-      {filteredStones.length > 8 ? (
+      {/* if filtered stones list has more then 8 items - show button */}
+      {filteredStones.length > 8 && (
+        // Button that can collapse or expand full list
         <RedButton
           isItemsList={isFullListLatest}
           handleEvent={() => toggleFullListLatest(true)}
         >
           Load more
         </RedButton>
-      ) : null}
+      )}
     </div>
   );
 }
