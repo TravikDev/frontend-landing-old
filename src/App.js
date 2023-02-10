@@ -1,39 +1,39 @@
 import { useRef } from "react";
+import { Categories } from "./components/Categories";
+import { Contact } from "./components/Contact";
+import { Latest } from "./components/Latest/";
+import { Layout } from "./components/Layout";
+import { Main } from "./components/Main";
 import "./App.css";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
-import Categories from "./components/Main/Categories/Categories";
-import ContactUs from "./components/Main/Contact/ContactUs";
-import Slider from "./components/Main/Slider/Slider";
-import Latest from "./components/Main/Latest/Latest";
 
 function App() {
   const itemsRef = useRef(null);
   const catsRef = useRef(null);
   const contactUsRef = useRef(null);
 
-  const itemsRefScroll = () => itemsRef.current.scrollIntoView({behavior: 'smooth'});
-  const catsRefScroll = () => catsRef.current.scrollIntoView({behavior: 'smooth'});
-  const contactUsRefScroll = () => contactUsRef.current.scrollIntoView({behavior: 'smooth'});
+  const itemsRefScroll = () =>
+    itemsRef.current.scrollIntoView({ behavior: "smooth" });
+  const catsRefScroll = () =>
+    catsRef.current.scrollIntoView({ behavior: "smooth" });
+  const contactUsRefScroll = () =>
+    contactUsRef.current.scrollIntoView({ behavior: "smooth" });
 
   return (
     <>
-      <Slider />
-      <Header
+      {/* Header up, slider down */}
+      <Layout
         itemsRefScroll={itemsRefScroll}
         catsRefScroll={catsRefScroll}
         contactUsRefScroll={contactUsRefScroll}
-      />
-      <main aria-label="primary-navigation">
-        <div className="px-[10px]">
+      >
+        <Main />
+        <div className="mx-[10px]">
           <Latest itemsRef={itemsRef} />
-
           <Categories catsRef={catsRef} />
-
-          <ContactUs contactUsRef={contactUsRef} />
+          <Contact contactUsRef={contactUsRef} />
         </div>
-      </main>
-      <Footer />
+      </Layout>
+      {/* <Footer /> */}
     </>
   );
 }

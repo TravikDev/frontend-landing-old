@@ -1,6 +1,7 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 
-function PlayOverlay({ onClose = (f) => f }) {
+export const PlayOverlay = ({ onClose = (f) => f }) => {
+  
   const overlayRef = useRef(null);
   const playerRef = useRef(null);
 
@@ -47,5 +48,3 @@ function PlayOverlay({ onClose = (f) => f }) {
     </>
   );
 }
-
-export default PlayOverlay;
